@@ -1,0 +1,12 @@
+{
+  "name": "qodly-slate",
+  "version": "0.2.3",
+  "scope": "qodly_783daecc8bfc2a76fd81",
+  "author": {
+    "name": "Qodly Team",
+    "email": "contact@qodly.com",
+    "url": "https://qodly.com"
+  },
+  "module": "components",
+  "remoteEntryFileName": "components.js"
+}

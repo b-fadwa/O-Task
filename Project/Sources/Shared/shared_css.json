@@ -1,0 +1,139 @@
+{
+	"classes": [
+		{
+			"name": "flexGrow1",
+			"content": "self {\n\tflex-grow: 1\n}",
+			"parentId": null,
+			"id": "UC8DiNT2tkmcBddc2qMro"
+		},
+		{
+			"name": "ellipsis2",
+			"content": "self {\n\tdisplay: -webkit-box;\n\t-webkit-line-clamp: 2;\n\t-webkit-box-orient: vertical;\n\toverflow: hidden;\n}",
+			"parentId": null,
+			"id": "rR8_JfdAG2JR0y0mi6Rvi"
+		},
+		{
+			"id": "SpQI5LH5J_HacHl4wWV2X",
+			"name": "ellipsis3",
+			"content": "self {\n\tdisplay: -webkit-box;\n\t-webkit-line-clamp: 3;\n\t-webkit-box-orient: vertical;\n\toverflow: hidden;\n}",
+			"parentId": null,
+			"children": {}
+		},
+		{
+			"name": "hidden",
+			"content": "self {\n\tdisplay: none !important;\n}",
+			"parentId": null,
+			"id": "4OWW8-uxG1DjJHBZc89Ah"
+		},
+		{
+			"name": "positionFix",
+			"content": "self {\n\tposition: fixed;\n}",
+			"parentId": null,
+			"id": "qxcouKjNwQ2bTXquYXxlJ"
+		},
+		{
+			"name": "onHover",
+			"content": "self {\n\tcolor: #616161\n}\n\nself:hover {\n\tcolor: #960067;\n}",
+			"parentId": null,
+			"id": "mI-QcIgySQGX6voqp1Oc9"
+		},
+		{
+			"name": "matrixBgTransparent",
+			"content": "self .FdVirtualGrid .innerScrollContainer .selected {\n\tbackground-color: transparent;\n}\n\nself .FdVirtualGrid .innerScrollContainer .items-center:hover {\n\tbackground-color: transparent;\n}\n\nself .FdVirtualGrid .innerScrollContainer .items-center .matrixItem:hover {\n\tbox-shadow: #5f86ea 0px 0px 0px 2px;\n}",
+			"parentId": null,
+			"id": "yk_BVOH4j4Floq6FW3Lra"
+		},
+		{
+			"name": "matrixCss",
+			"content": "self .FdVirtualGrid > div .selected { \n\tbackground-color: transparent;\n}\nself .FdVirtualGrid > div :hover{\n\tbackground: transparent;\n}\nself .FdVirtualGrid{\n\twidth: fit-content !important;\n\t/* width:calc(100%-4*299px) !important; */\n}",
+			"parentId": null,
+			"id": "b4AzCBJ_TpMHumbyd9F7-"
+		},
+		{
+			"name": "tabs",
+			"content": "self button[data-headlessui-state] {\n\tfont-size: 16px !important;\n\tcolor: #66687d;\n\tbackground-color: transparent;\n\tpadding: 12px 12px;\n}\n\nself button[data-headlessui-state=\"selected\"] {\n\tcolor: #EA5F71 !important;\n\tbackground-color: transparent !important;\n\tfont-weight: 500 !important;\n}\n\nself button[data-headlessui-state=\"selected\"]:after {\n\tbackground-color: #EA5F71;\n}",
+			"parentId": null,
+			"id": "d3YlrQp43bbqUh7GibdZb"
+		},
+		{
+			"name": "boxShadowCSS",
+			"content": "self {\n\tbox-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);\n\t-webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);\n\t-moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);;\n}",
+			"parentId": null,
+			"id": "wx2g7wt88KmxxLePstGnu"
+		},
+		{
+			"name": "truncateCSS",
+			"content": "self {\n\tdisplay: -webkit-box;\n\t-webkit-line-clamp: 1;\n\t-webkit-box-orient: vertical;\n\toverflow: hidden;\n}",
+			"parentId": null,
+			"id": "rbGEVxgC2mqigfZ6Nv4Kc"
+		},
+		{
+			"name": "lightRedButtonCSS",
+			"content": "self {\n\tbox-shadow: 0px 2px 0px 0px #333;\n}\nself:hover {\n\topacity: 0.8;\n}\nself:active {\n\topacity: 1;\n}",
+			"parentId": null,
+			"id": "NHk9LwxBEFQWxkUVw1UOu"
+		},
+		{
+			"name": "whiteButtonCSS",
+			"content": "self {\n\tbox-shadow: 0px 2px 0px 0px #C0C6E2;\n}\nself:hover {\n\topacity: 0.8;\n}\nself:active {\n\topacity: 1;\n}",
+			"parentId": null,
+			"id": "A9tHvsI0_qoSsgpBqCuPj"
+		},
+		{
+			"name": "incidentStatusCSS",
+			"content": "self {\n\tfont-weight: 500;\n\tcolor: white;\n}\n\nself:has(p span[title=\"open\"]) {\n\tbackground-color: #08aeea !important;\n}\n\nself:has(p span[title=\"in progress\"]) {\n\tbackground-color: #b99897 !important;\n}\n\nself:has(p span[title=\"to be tested\"]) {\n\tbackground-color: #f36969 !important;\n}\n\nself:has(p span[title=\"closed\"]) {\n\tbackground-color: #49e6cf !important;\n}",
+			"parentId": null,
+			"id": "Vd6Ce1WWJ9a0PXigsfT8-"
+		},
+		{
+			"name": "gapTask",
+			"content": "self:has(p span[title=\"notDeadline\"]){\n\tcolor: #3A5BCD;\n}\n\nself:has(p span[title=\"todayDeadline\"]){\n\tcolor: #57ae56;\n}\n\nself:has(p span[title=\"overDue\"]){\n\tcolor: #EA5F71;\n\tfont-weight: 600 !important;\n}",
+			"parentId": null,
+			"id": "uQTu1O6gFdOBR6fNPrgm8"
+		},
+		{
+			"name": "listNameCSS",
+			"content": "self {\n\tfont-weight: 600 !important;\n\tbackground-color: #B02C86;\n\tcolor: white;\n\tdisplay: flex;\n}\n\nself:has(p span[title=\"Done\"]) {\n\tbackground-color: #009966 !important;\n}\n\nself:has(p span[title=\"Doing\"]),\nself:has(p span[title=\"In Progress\"]) {\n\tbackground-color: #0069ee !important;\n}\n\nself:has(p span[title=\"TODO\"]),\nself:has(p span[title=\"ToDo\"]),\nself:has(p span[title=\"Todo\"]) {\n\tbackground-color: #9dc3e9 !important;\n\tcolor: black !important;\n}\n\nself:has(p span[title=\"Closed\"]) {\n\tbackground-color: #2D264B !important;\n\tdisplay: none !important;\n}",
+			"parentId": null,
+			"id": "YdliqsgRDPB1DHJGvXsiX"
+		},
+		{
+			"name": "fadeInCSS",
+			"content": "self {\n\tanimation: fadeIn 0.5s;\n}",
+			"parentId": null,
+			"id": "BYQ6zYGL9Fkx1kBiT6AsB"
+		},
+		{
+			"name": "flexDisplay",
+			"content": "self{\n\tdisplay: flex !important;\n}",
+			"parentId": null,
+			"id": "MEyedcz-icrtlIIaA2r9r"
+		},
+		{
+			"name": "virtualizerCSS",
+			"content": "/*to eliminate the purple background when selecting an item*/\nself .virtualizer-list .virtualizer-item.selected {\n\tbackground-color: transparent;\n}",
+			"parentId": null,
+			"id": "mULqctNvuKn__SKnhzp16"
+		},
+		{
+			"name": "timelineCSS",
+			"content": "self .rounded-full{\n\tbackground-color: #B02C86;\n\tz-index: 1;\n}",
+			"parentId": null,
+			"id": "uQLygws5ToB2kDq7yA5ve"
+		},
+		{
+			"name": "rangePointerCSS",
+			"content": "self, .fd-slider {\n\tcursor: pointer !important;\n}",
+			"parentId": null,
+			"id": "BG5AaPjZsX8Ul2kVMJ-3S"
+		},
+		{
+			"id": "tq9JaiJdobjU85-MPMPoW",
+			"name": "rangeDefaultCSS",
+			"content": "self, .fd-slider {\n\tcursor: default !important;\n}",
+			"parentId": null,
+			"children": {}
+		}
+	]
+}
+

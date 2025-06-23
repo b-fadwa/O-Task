@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
+<base name="OTask" uuid="1041EB65F02ADD479B12902075C92040" collation_locale="en">
+	<schema name="DEFAULT_SCHEMA"/>
+	<table name="User" uuid="E849CBCE423E4FF69306AC99E9AC51E8" id="1">
+		<field name="ID" uuid="0474AD4214AF45689ABDE3D39F94D040" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="email" uuid="6872651808F348C8A2E13A8AE9E66DAF" type="10" unique="true" not_null="true" id="2"/>
+		<field name="pictureProfil" uuid="2B8280A75F4A4D449C3ECA57034E091C" type="12" id="3"/>
+		<primary_key field_name="ID" field_uuid="0474AD4214AF45689ABDE3D39F94D040"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="128" green="51" blue="231" alpha="255"/>
+				<coordinates left="526.40222167969" top="832.01141357422" width="200" height="300"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Task" uuid="03D44B2325294355AA73C70CB3F605FA" id="2">
+		<field name="ID" uuid="41AF8F3CBA7C4BEBB1BF4FD367B89771" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="name" uuid="F83A474D2CED46E480E5A2E9F4F7473F" type="10" id="2"/>
+		<field name="description" uuid="126C7940C42D4962B1CDA3A708A0BDA7" type="10" id="3"/>
+		<field name="createdAt" uuid="1E3FCEA0CDAD42D18B9354AED38F66D5" type="8" id="4"/>
+		<field name="UpdatedAt" uuid="4663A12F7BA24098BBA4B7EA2506E029" type="8" id="5"/>
+		<field name="createdTime" uuid="B41CB0F946B44FC99F65FCF65C595495" type="9" id="6"/>
+		<field name="updatedtime" uuid="2B7594BE439A4D98BD6CCC9BE3326546" type="9" id="7"/>
+		<field name="track" uuid="64AA50F883DA4E5F8CA772F155F5AB21" type="4" id="8"/>
+		<field name="user_ID" uuid="7B08092C54CB4F7EBAEDE3E78FA057C6" type="4" id="9"/>
+		<field name="list_ID" uuid="6B4857DE25EE4D179B0C4EBE08823D14" type="4" id="12"/>
+		<field name="startDate" uuid="06D7BFBB518243B8ACA67CB4BBD29767" type="8" id="13"/>
+		<field name="endDate" uuid="99325905EC7F46EE8A559A3C63082798" type="8" id="14"/>
+		<field name="priority" uuid="3E1F7FBEA0F9449A9D4E85DEEF87AB6A" type="10" id="16"/>
+		<field name="createdBy_ID" uuid="67AFFB28DACB44EA80ABAFE9ECEB2334" type="4" id="17"/>
+		<field name="isImportant" uuid="DD0AD77A578F4DF8A8731A853066AC2A" type="1" id="19"/>
+		<primary_key field_name="ID" field_uuid="41AF8F3CBA7C4BEBB1BF4FD367B89771"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="59" green="130" blue="246" alpha="255"/>
+				<coordinates left="1367.0277099609" top="461.19610595703" width="200" height="300"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Board" uuid="4D3E67C7471C471BBF76FE89334A8F09" id="3">
+		<field name="ID" uuid="E13018B3C23B4CA2A4B58E9775AE6413" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="name" uuid="5A3B3C96320F440480E1328A713EB34C" type="10" id="2"/>
+		<field name="createdAt" uuid="4652CBDE63854544854C194123EFA713" type="8" id="3"/>
+		<field name="updatedAt" uuid="EFCF9AC7EADB49E99A90905460ADBDBF" type="8" id="4"/>
+		<field name="description" uuid="9B5B925F6E774193AD40605C43C28CA9" type="10" id="5"/>
+		<field name="user_ID" uuid="80B5420E3BCD4F3CA5455559314F9EFD" type="4" id="6"/>
+		<field name="private" uuid="6AD892343AF7483ABD8C581C214E9145" type="1" id="7"/>
+		<field name="zone" uuid="F6CD5FFE20F7449B9E2CCA2474743BBF" type="10" id="10"/>
+		<primary_key field_name="ID" field_uuid="E13018B3C23B4CA2A4B58E9775AE6413"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="192" green="202" blue="143" alpha="255"/>
+				<coordinates left="1361.5360107422" top="1632.2404785156" width="200" height="300"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Comment" uuid="37E063C06EE24028AF0A6B428AA7D351" id="4">
+		<field name="ID" uuid="8048F2C3EB444D0F874E5596B7928F7F" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="content" uuid="21D6DE5F081A45288E93F4B9818C2D38" type="10" id="2"/>
+		<field name="createdAt" uuid="10AAD665B00A4B0EB1366C1DA5B705A1" type="8" id="3"/>
+		<field name="updatedAt" uuid="A28BE71102254AE99565673180C1126F" type="8" id="4"/>
+		<field name="task_ID" uuid="EACF9BC972F748D49B39CAD0D782FA9A" type="4" id="5"/>
+		<field name="user_ID" uuid="AA591E8C40884F42B562787DFE130845" type="4" id="6"/>
+		<field name="createdTime" uuid="D3795D15E0B04F749DB575347722F4C6" type="9" id="7"/>
+		<field name="updatedTime" uuid="3DDD40B6736946C9BA9FC1AC64BC1D60" type="9" id="8"/>
+		<field name="order" uuid="958FEA10110D44AC9BB81B6594F19C2D" type="4" id="9"/>
+		<field name="problem_ID" uuid="0FFC661099F94E099AA31DF1FD1D785F" type="4" id="10"/>
+		<primary_key field_name="ID" field_uuid="8048F2C3EB444D0F874E5596B7928F7F"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="255" green="255" blue="255" alpha="255"/>
+				<coordinates left="1369.5124511719" top="0" width="200" height="300"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Notification" uuid="51BCF66083EC427391523F7D39C44553" id="5">
+		<field name="ID" uuid="3915943E91D14AC0BF662EAE441C7756" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="type" uuid="BB886EDEE7F84174B7C71D03D9C7E7A7" type="10" id="2"/>
+		<field name="content" uuid="F212988E1ADE4AF89A6029168CDCA4C8" type="10" id="3"/>
+		<field name="isRead" uuid="12218B4682254CEE988EB72D3B9EE51B" type="1" id="4"/>
+		<field name="createdAt" uuid="E1FF382569ED4D33BECA01650C13803B" type="8" id="5"/>
+		<field name="creationTime" uuid="B2CC85179BF84DB0B8474CE4453B9D49" type="9" id="6"/>
+		<field name="user_ID" uuid="B34607853B164B77AF9C4725B4FDC379" type="4" id="7"/>
+		<primary_key field_name="ID" field_uuid="3915943E91D14AC0BF662EAE441C7756"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="54" green="123" blue="81" alpha="255"/>
+				<coordinates left="0" top="1410.1281738281" width="200" height="300"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Tag" uuid="BE568920499A441FBDDA69A5632B01FC" id="6">
+		<field name="ID" uuid="474F11857852499DACAA90D588E7A264" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="name" uuid="F43F2B16E96A4A068474F7F8E0E2CB25" type="10" id="2"/>
+		<primary_key field_name="ID" field_uuid="474F11857852499DACAA90D588E7A264"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="82" green="134" blue="42" alpha="255"/>
+				<coordinates left="2276.1491699219" top="772.98504638672" width="200" height="300"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="TaskTag" uuid="5350878094C44A83A7B03844A2CD3452" id="7">
+		<field name="ID" uuid="5A551166A5FB47A1959ECD4CB02BDE7E" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="tag_ID" uuid="28257747420344F1821EC7BFFA510FD4" type="4" id="2"/>
+		<field name="task_ID" uuid="29AF614B36694FCAB5165F06D568FBD4" type="4" id="3"/>
+		<primary_key field_name="ID" field_uuid="5A551166A5FB47A1959ECD4CB02BDE7E"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="245" green="231" blue="23" alpha="255"/>
+				<coordinates left="1824.4794921875" top="587.15771484375" width="200" height="300"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="List" uuid="4CCC87092B144578AE247AD9C4D2EA81" id="8">
+		<field name="ID" uuid="6C761DAECD1C4AAFAC8B1055EA66F3C4" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="name" uuid="1367557F7F5747888267EC44216FB77B" type="10" id="2"/>
+		<field name="board_ID" uuid="F5932B715A574CEE9DE8BD64C3B99466" type="4" id="3"/>
+		<primary_key field_name="ID" field_uuid="6C761DAECD1C4AAFAC8B1055EA66F3C4"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="255" green="112" blue="67" alpha="255"/>
+				<coordinates left="1825.2241210938" top="865.44641113281" width="200" height="300"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="ArchivedBoard" uuid="80732014A231423794CD02D36BFECE66" id="9">
+		<field name="ID" uuid="8892D9CAAFA84C1C8E8A19460E06F268" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="user_ID" uuid="7D22D6E1397341EFAFD37AE921601A49" type="4" id="2"/>
+		<field name="board_ID" uuid="389CA5905FA6477B83E19D8565E78DD8" type="4" id="3"/>
+		<field name="date" uuid="1B6B39FEB80C445A822FABCEEF54BA89" type="8" id="4"/>
+		<field name="time" uuid="974C2B45DC444C648AAF4B65B517AB28" type="9" id="5"/>
+		<primary_key field_name="ID" field_uuid="8892D9CAAFA84C1C8E8A19460E06F268"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="23" green="255" blue="255" alpha="255"/>
+				<coordinates left="951.83203125" top="1803.48828125" width="200" height="300"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Note" uuid="B891917E557B4B53BC96E08DF743E975" id="10">
+		<field name="ID" uuid="2F46A5DE52064AE681537C10FD7936EF" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="createdAt" uuid="46810D18EDE0481DA38B2C4A5B87FE1B" type="8" id="2"/>
+		<field name="creationTime" uuid="525B9C08C8BC4B99A9C581F245612B38" type="9" id="3"/>
+		<field name="content" uuid="C6D09ECE1E6D4A3CB7F7BDB877E4AF3E" type="10" id="4"/>
+		<field name="user_ID" uuid="08483C7C86FE4475AAD4855A2C5ABCAD" type="4" id="5"/>
+		<field name="title" uuid="2104F7153C9242D1BAC2EAD85CC7D513" type="10" id="6"/>
+		<field name="board_ID" uuid="3A51CF6BBA1F463597C1544D4E680047" type="4" id="7"/>
+		<field name="isUpdated" uuid="D9FACDA8F95F435285CD4C85FA77DB5F" type="1" id="8"/>
+		<field name="updatedAt" uuid="F938796467A54877BCF6C54E68225D49" type="8" id="9"/>
+		<field name="updateTime" uuid="022852F86D114A66BFE19007DE586A8B" type="9" id="10"/>
+		<field name="isPinned" uuid="21E97E858D614F38823718C879BB48B5" type="1" id="11"/>
+		<primary_key field_name="ID" field_uuid="2F46A5DE52064AE681537C10FD7936EF"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="111" green="28" blue="133" alpha="255"/>
+				<coordinates left="952.44781494141" top="2120.4250488281" width="200" height="300"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Incident" uuid="1986917A44DE443EB50200BA686B2220" id="11">
+		<field name="ID" uuid="7550696C69B541988A813BEBCC458BD3" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="title" uuid="5431C6D1EC30479E889EDC3D99D102CF" type="10" id="2"/>
+		<field name="description" uuid="132EE91DCE3548F9A4C5455B0664F318" type="10" id="3"/>
+		<field name="user_ID" uuid="EAF8609FD86A4D298569B54D2E7F6AE0" type="4" id="5"/>
+		<field name="createdAt" uuid="3D047233DA714CE08C01AE0D5D32D70A" type="8" id="6"/>
+		<field name="creationTime" uuid="85CB7517484743EB98B2432D2B7C14E2" type="9" id="7"/>
+		<field name="updatedAt" uuid="4740D2CA14774F34823E8076D4E1E924" type="8" id="8"/>
+		<field name="updateTime" uuid="AFE46C3720284B8CA831029A873A6FE4" type="9" id="9"/>
+		<field name="updatedBy_ID" uuid="F86F5CA46F6E42A58655A36A0AE759A9" type="4" id="10"/>
+		<field name="status" uuid="E6DFBFCDCA404F56A3F4F07D2C320B36" type="10" id="11"/>
+		<field name="severity" uuid="2AB44449729D47009FE9147730F6513B" type="10" id="12"/>
+		<field name="reproducible" uuid="318F5BED3F7A4F069206A539D00E3DB5" type="10" id="14"/>
+		<field name="dueDate" uuid="22D9FE5A6D324EA1BFCE6553E5A52569" type="8" id="15"/>
+		<field name="assignee_ID" uuid="BB8F35934F214EC0B1CC8F307D7B09A5" type="4" id="16"/>
+		<primary_key field_name="ID" field_uuid="7550696C69B541988A813BEBCC458BD3"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="231" green="51" blue="81" alpha="255"/>
+				<coordinates left="2.738037109375" top="538.59185791016" width="200" height="300"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="TaskIncident" uuid="AE5BCF9E4F734983B96557EE71A640A5" id="12">
+		<field name="ID" uuid="EC5094E973A24A5F9C0BAF965285A20E" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="problem_ID" uuid="026CC6D8D0B44BFE8DB9FBCFD5C492FE" type="4" id="2"/>
+		<field name="task_ID" uuid="89C43F1AC0C84FC09DBAFC252860D87D" type="4" id="3"/>
+		<primary_key field_name="ID" field_uuid="EC5094E973A24A5F9C0BAF965285A20E"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="244" green="200" blue="200" alpha="255"/>
+				<coordinates left="493.47402954102" top="458.52307128906" width="200" height="300"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Activity" uuid="B13E20E2A513472BA464A86973CEA437" id="13">
+		<field name="ID" uuid="FA97A70DD5614310ADFB4CFD910B47D4" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="user_ID" uuid="7354BA32B2444DE7BF15A4B18F188ABD" type="4" id="2"/>
+		<field name="content" uuid="072080C157F842AF8EE5593957C33065" type="10" id="3"/>
+		<field name="createdAt" uuid="3B24EB536BC14699BE507BE3BBE636CB" type="8" id="4"/>
+		<field name="creationTime" uuid="3F05311A5D6A4C2796B193F0344957FA" type="9" id="5"/>
+		<field name="subject" uuid="A6A6401BAC1D444696164048A96C647A" type="10" id="6"/>
+		<field name="problem_ID" uuid="447DE33F93274F4D878BAB53FDBF6891" type="4" id="7"/>
+		<field name="task_ID" uuid="F29EFF2B0D3C4867BF8C17B48DABF2B5" type="4" id="8"/>
+		<primary_key field_name="ID" field_uuid="FA97A70DD5614310ADFB4CFD910B47D4"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="186" green="92" blue="173" alpha="255"/>
+				<coordinates left="532.92114257812" top="56.813232421875" width="200" height="300"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Label" uuid="D15BFB1C56944A279D16EE92E390FB32" id="14">
+		<field name="ID" uuid="2BF1F8E89CA342DE9B3317905FAD2422" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="title" uuid="E7B568E3C87A4FF587ACF5D9F510FD8E" type="10" id="2"/>
+		<field name="user_ID" uuid="51C238A1E60A4FB384447926939F0E23" type="4" id="3"/>
+		<field name="isDefault" uuid="77979E775835453F916077E03548177F" type="1" id="5"/>
+		<primary_key field_name="ID" field_uuid="2BF1F8E89CA342DE9B3317905FAD2422"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="0" green="142" blue="255" alpha="255"/>
+				<coordinates left="153.57678222656" top="2194.6049804688" width="200" height="300"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="LabelNote" uuid="1DD426D2454E46CF80F862BD1B6CAD4A" id="15">
+		<field name="ID" uuid="26E6F4E882C34074A1ACEAA19B20E21A" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="label_ID" uuid="67AFD644E57349EC9C0F16AA332B7DFE" type="4" id="2"/>
+		<field name="note_ID" uuid="E41A42EB485141F29FEFA01C5E3122AA" type="4" id="3"/>
+		<primary_key field_name="ID" field_uuid="26E6F4E882C34074A1ACEAA19B20E21A"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="0" green="0" blue="0" alpha="255"/>
+				<coordinates left="565.10015869141" top="2237.048828125" width="200" height="300"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<relation uuid="0DB9F4C05D494D2994B73F799A6DFA09" name_Nto1="user" name_1toN="tasks" state="1">
+		<related_field kind="source">
+			<field_ref uuid="7B08092C54CB4F7EBAEDE3E78FA057C6" name="user_ID">
+				<table_ref uuid="03D44B2325294355AA73C70CB3F605FA" name="Task"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="0474AD4214AF45689ABDE3D39F94D040" name="ID">
+				<table_ref uuid="E849CBCE423E4FF69306AC99E9AC51E8" name="User"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="8A3D427E5DC843B4A20BC7B29336636D" name_Nto1="user" name_1toN="boards" state="1">
+		<related_field kind="source">
+			<field_ref uuid="80B5420E3BCD4F3CA5455559314F9EFD" name="user_ID">
+				<table_ref uuid="4D3E67C7471C471BBF76FE89334A8F09" name="Board"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="0474AD4214AF45689ABDE3D39F94D040" name="ID">
+				<table_ref uuid="E849CBCE423E4FF69306AC99E9AC51E8" name="User"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="F8C171DF212F4DB6A08DC8060B73353D" name_Nto1="user" name_1toN="comments" state="1">
+		<related_field kind="source">
+			<field_ref uuid="AA591E8C40884F42B562787DFE130845" name="user_ID">
+				<table_ref uuid="37E063C06EE24028AF0A6B428AA7D351" name="Comment"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="0474AD4214AF45689ABDE3D39F94D040" name="ID">
+				<table_ref uuid="E849CBCE423E4FF69306AC99E9AC51E8" name="User"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="8413415DAFDC44B0A4A3FA78A515CF03" name_Nto1="user" name_1toN="notifications" state="1">
+		<related_field kind="source">
+			<field_ref uuid="B34607853B164B77AF9C4725B4FDC379" name="user_ID">
+				<table_ref uuid="51BCF66083EC427391523F7D39C44553" name="Notification"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="0474AD4214AF45689ABDE3D39F94D040" name="ID">
+				<table_ref uuid="E849CBCE423E4FF69306AC99E9AC51E8" name="User"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="775E81AA51684002B83F818ED3CF4E07" name_Nto1="user" name_1toN="archivedBoards" state="1">
+		<related_field kind="source">
+			<field_ref uuid="7D22D6E1397341EFAFD37AE921601A49" name="user_ID">
+				<table_ref uuid="80732014A231423794CD02D36BFECE66" name="ArchivedBoard"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="0474AD4214AF45689ABDE3D39F94D040" name="ID">
+				<table_ref uuid="E849CBCE423E4FF69306AC99E9AC51E8" name="User"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="A40FA0D4CB284AECB8F01BE91A97917F" name_Nto1="user" name_1toN="notes" state="1">
+		<related_field kind="source">
+			<field_ref uuid="08483C7C86FE4475AAD4855A2C5ABCAD" name="user_ID">
+				<table_ref uuid="B891917E557B4B53BC96E08DF743E975" name="Note"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="0474AD4214AF45689ABDE3D39F94D040" name="ID">
+				<table_ref uuid="E849CBCE423E4FF69306AC99E9AC51E8" name="User"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="A626893F2BF84183A743C5BE6628272E" name_Nto1="user" name_1toN="problems" state="1">
+		<related_field kind="source">
+			<field_ref uuid="EAF8609FD86A4D298569B54D2E7F6AE0" name="user_ID">
+				<table_ref uuid="1986917A44DE443EB50200BA686B2220" name="Incident"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="0474AD4214AF45689ABDE3D39F94D040" name="ID">
+				<table_ref uuid="E849CBCE423E4FF69306AC99E9AC51E8" name="User"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="042E2308A5194432BC6AF3844CC7DCCA" name_Nto1="createdBy" name_1toN="taskSelection" state="1">
+		<related_field kind="source">
+			<field_ref uuid="67AFFB28DACB44EA80ABAFE9ECEB2334" name="createdBy_ID">
+				<table_ref uuid="03D44B2325294355AA73C70CB3F605FA" name="Task"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="0474AD4214AF45689ABDE3D39F94D040" name="ID">
+				<table_ref uuid="E849CBCE423E4FF69306AC99E9AC51E8" name="User"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="0A8071F55D7D46FA9437488D1520D48A" name_Nto1="updatedBy" name_1toN="problemsUpdated" state="1">
+		<related_field kind="source">
+			<field_ref uuid="F86F5CA46F6E42A58655A36A0AE759A9" name="updatedBy_ID">
+				<table_ref uuid="1986917A44DE443EB50200BA686B2220" name="Incident"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="0474AD4214AF45689ABDE3D39F94D040" name="ID">
+				<table_ref uuid="E849CBCE423E4FF69306AC99E9AC51E8" name="User"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="85C8A492C387438BA5725ECCAC1B66CA" name_Nto1="user" name_1toN="activities" state="1">
+		<related_field kind="source">
+			<field_ref uuid="7354BA32B2444DE7BF15A4B18F188ABD" name="user_ID">
+				<table_ref uuid="B13E20E2A513472BA464A86973CEA437" name="Activity"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="0474AD4214AF45689ABDE3D39F94D040" name="ID">
+				<table_ref uuid="E849CBCE423E4FF69306AC99E9AC51E8" name="User"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="B5B8BAFFFEF6460A8E347BA18C10F7A7" name_Nto1="assignee" name_1toN="problemsAssignee" state="1">
+		<related_field kind="source">
+			<field_ref uuid="BB8F35934F214EC0B1CC8F307D7B09A5" name="assignee_ID">
+				<table_ref uuid="1986917A44DE443EB50200BA686B2220" name="Incident"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="0474AD4214AF45689ABDE3D39F94D040" name="ID">
+				<table_ref uuid="E849CBCE423E4FF69306AC99E9AC51E8" name="User"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="42EEDDEE946F4FEC926F3E6766CC5D46" name_Nto1="user" name_1toN="personalLabels" state="1">
+		<related_field kind="source">
+			<field_ref uuid="51C238A1E60A4FB384447926939F0E23" name="user_ID">
+				<table_ref uuid="D15BFB1C56944A279D16EE92E390FB32" name="Label"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="0474AD4214AF45689ABDE3D39F94D040" name="ID">
+				<table_ref uuid="E849CBCE423E4FF69306AC99E9AC51E8" name="User"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="1536AA3E59D14C8BA9D4175A299B4593" name_Nto1="task" name_1toN="comments" state="1">
+		<related_field kind="source">
+			<field_ref uuid="EACF9BC972F748D49B39CAD0D782FA9A" name="task_ID">
+				<table_ref uuid="37E063C06EE24028AF0A6B428AA7D351" name="Comment"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="41AF8F3CBA7C4BEBB1BF4FD367B89771" name="ID">
+				<table_ref uuid="03D44B2325294355AA73C70CB3F605FA" name="Task"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="6E5CA16276FC4D76AF3C4908772B338A" name_Nto1="task" name_1toN="taskTags" state="1">
+		<related_field kind="source">
+			<field_ref uuid="29AF614B36694FCAB5165F06D568FBD4" name="task_ID">
+				<table_ref uuid="5350878094C44A83A7B03844A2CD3452" name="TaskTag"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="41AF8F3CBA7C4BEBB1BF4FD367B89771" name="ID">
+				<table_ref uuid="03D44B2325294355AA73C70CB3F605FA" name="Task"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="D5E97268C1B0445C8097F3D597AA38A8" name_Nto1="task" name_1toN="problems" state="1">
+		<related_field kind="source">
+			<field_ref uuid="89C43F1AC0C84FC09DBAFC252860D87D" name="task_ID">
+				<table_ref uuid="AE5BCF9E4F734983B96557EE71A640A5" name="TaskIncident"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="41AF8F3CBA7C4BEBB1BF4FD367B89771" name="ID">
+				<table_ref uuid="03D44B2325294355AA73C70CB3F605FA" name="Task"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="4584B79791A947E5948F5F9B131DAFD1" name_Nto1="task" name_1toN="activities" state="1">
+		<related_field kind="source">
+			<field_ref uuid="F29EFF2B0D3C4867BF8C17B48DABF2B5" name="task_ID">
+				<table_ref uuid="B13E20E2A513472BA464A86973CEA437" name="Activity"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="41AF8F3CBA7C4BEBB1BF4FD367B89771" name="ID">
+				<table_ref uuid="03D44B2325294355AA73C70CB3F605FA" name="Task"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="D8EE122FD8F340FF9171F68A49A2A91F" name_Nto1="board" name_1toN="lists" state="1">
+		<related_field kind="source">
+			<field_ref uuid="F5932B715A574CEE9DE8BD64C3B99466" name="board_ID">
+				<table_ref uuid="4CCC87092B144578AE247AD9C4D2EA81" name="List"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="E13018B3C23B4CA2A4B58E9775AE6413" name="ID">
+				<table_ref uuid="4D3E67C7471C471BBF76FE89334A8F09" name="Board"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="3D0FCADE609F421AB13318A97BD211AF" name_Nto1="board" name_1toN="archivedBoardSelection" state="1">
+		<related_field kind="source">
+			<field_ref uuid="389CA5905FA6477B83E19D8565E78DD8" name="board_ID">
+				<table_ref uuid="80732014A231423794CD02D36BFECE66" name="ArchivedBoard"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="E13018B3C23B4CA2A4B58E9775AE6413" name="ID">
+				<table_ref uuid="4D3E67C7471C471BBF76FE89334A8F09" name="Board"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="45C0E6837B2E4BB68D8BB6198C1EDAB2" name_Nto1="board" name_1toN="notes" state="1">
+		<related_field kind="source">
+			<field_ref uuid="3A51CF6BBA1F463597C1544D4E680047" name="board_ID">
+				<table_ref uuid="B891917E557B4B53BC96E08DF743E975" name="Note"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="E13018B3C23B4CA2A4B58E9775AE6413" name="ID">
+				<table_ref uuid="4D3E67C7471C471BBF76FE89334A8F09" name="Board"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="8EA0109AE31148AAB8BD431C47AFDC66" name_Nto1="tag" name_1toN="taskTags" state="1">
+		<related_field kind="source">
+			<field_ref uuid="28257747420344F1821EC7BFFA510FD4" name="tag_ID">
+				<table_ref uuid="5350878094C44A83A7B03844A2CD3452" name="TaskTag"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="474F11857852499DACAA90D588E7A264" name="ID">
+				<table_ref uuid="BE568920499A441FBDDA69A5632B01FC" name="Tag"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="E9427859A54B4C22B5B46C9D54EE3010" name_Nto1="list" name_1toN="tasks" state="1">
+		<related_field kind="source">
+			<field_ref uuid="6B4857DE25EE4D179B0C4EBE08823D14" name="list_ID">
+				<table_ref uuid="03D44B2325294355AA73C70CB3F605FA" name="Task"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="6C761DAECD1C4AAFAC8B1055EA66F3C4" name="ID">
+				<table_ref uuid="4CCC87092B144578AE247AD9C4D2EA81" name="List"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="117C48DF31C8464B89841D3DC0B2CBA6" name_Nto1="note" name_1toN="labelNoteSel" state="1">
+		<related_field kind="source">
+			<field_ref uuid="E41A42EB485141F29FEFA01C5E3122AA" name="note_ID">
+				<table_ref uuid="1DD426D2454E46CF80F862BD1B6CAD4A" name="LabelNote"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="2F46A5DE52064AE681537C10FD7936EF" name="ID">
+				<table_ref uuid="B891917E557B4B53BC96E08DF743E975" name="Note"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="CB83A0A2D01A4B3E82974C4AD08E7704" name_Nto1="problem" name_1toN="tasks" state="1">
+		<related_field kind="source">
+			<field_ref uuid="026CC6D8D0B44BFE8DB9FBCFD5C492FE" name="problem_ID">
+				<table_ref uuid="AE5BCF9E4F734983B96557EE71A640A5" name="TaskIncident"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="7550696C69B541988A813BEBCC458BD3" name="ID">
+				<table_ref uuid="1986917A44DE443EB50200BA686B2220" name="Incident"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="0A9EDAB87DEE442B97C5EF919698C5A6" name_Nto1="problem" name_1toN="activities" state="1">
+		<related_field kind="source">
+			<field_ref uuid="447DE33F93274F4D878BAB53FDBF6891" name="problem_ID">
+				<table_ref uuid="B13E20E2A513472BA464A86973CEA437" name="Activity"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="7550696C69B541988A813BEBCC458BD3" name="ID">
+				<table_ref uuid="1986917A44DE443EB50200BA686B2220" name="Incident"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="71D34D8B1F1146939ED62CDF09B38F8A" name_Nto1="problem" name_1toN="comments" state="1">
+		<related_field kind="source">
+			<field_ref uuid="0FFC661099F94E099AA31DF1FD1D785F" name="problem_ID">
+				<table_ref uuid="37E063C06EE24028AF0A6B428AA7D351" name="Comment"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="7550696C69B541988A813BEBCC458BD3" name="ID">
+				<table_ref uuid="1986917A44DE443EB50200BA686B2220" name="Incident"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="C2959802B8644E8B8DD996C2602F10B2" name_Nto1="label" name_1toN="labelNoteSel" state="1">
+		<related_field kind="source">
+			<field_ref uuid="67AFD644E57349EC9C0F16AA332B7DFE" name="label_ID">
+				<table_ref uuid="1DD426D2454E46CF80F862BD1B6CAD4A" name="LabelNote"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="2BF1F8E89CA342DE9B3317905FAD2422" name="ID">
+				<table_ref uuid="D15BFB1C56944A279D16EE92E390FB32" name="Label"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<index kind="regular" unique_keys="true" uuid="0C5A1EB90707EF48853723039E591252" type="1">
+		<field_ref uuid="FA97A70DD5614310ADFB4CFD910B47D4" name="ID">
+			<table_ref uuid="B13E20E2A513472BA464A86973CEA437" name="Activity"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="116162BF16765A4A83CF5BFF86DF08CA" type="1">
+		<field_ref uuid="26E6F4E882C34074A1ACEAA19B20E21A" name="ID">
+			<table_ref uuid="1DD426D2454E46CF80F862BD1B6CAD4A" name="LabelNote"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="290EBE5979833C47B4C00E9031EB2FC4" type="1">
+		<field_ref uuid="E13018B3C23B4CA2A4B58E9775AE6413" name="ID">
+			<table_ref uuid="4D3E67C7471C471BBF76FE89334A8F09" name="Board"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="3738A277720D0E42A0CA176006841CD2" type="1">
+		<field_ref uuid="0474AD4214AF45689ABDE3D39F94D040" name="ID">
+			<table_ref uuid="E849CBCE423E4FF69306AC99E9AC51E8" name="User"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="4AEE5C243EF0A344B0AD719CBF6FBA18" type="1">
+		<field_ref uuid="3915943E91D14AC0BF662EAE441C7756" name="ID">
+			<table_ref uuid="51BCF66083EC427391523F7D39C44553" name="Notification"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="5126E381E3777B42A3B12BF698B53E4C" type="1">
+		<field_ref uuid="6872651808F348C8A2E13A8AE9E66DAF" name="email">
+			<table_ref uuid="E849CBCE423E4FF69306AC99E9AC51E8" name="User"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="6201AED6F8D85B4EA26B5773B3864B32" type="1">
+		<field_ref uuid="8048F2C3EB444D0F874E5596B7928F7F" name="ID">
+			<table_ref uuid="37E063C06EE24028AF0A6B428AA7D351" name="Comment"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="8A6D42932330D24187D8DF838E88B525" type="1">
+		<field_ref uuid="EC5094E973A24A5F9C0BAF965285A20E" name="ID">
+			<table_ref uuid="AE5BCF9E4F734983B96557EE71A640A5" name="TaskIncident"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="97C2766006EC304A8F78C8B07386491A" type="1">
+		<field_ref uuid="5A551166A5FB47A1959ECD4CB02BDE7E" name="ID">
+			<table_ref uuid="5350878094C44A83A7B03844A2CD3452" name="TaskTag"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="BD4A706779E5E748BEEB6A63EC841362" type="1">
+		<field_ref uuid="474F11857852499DACAA90D588E7A264" name="ID">
+			<table_ref uuid="BE568920499A441FBDDA69A5632B01FC" name="Tag"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="CD31762431F5764D816D7E158F5D5119" type="1">
+		<field_ref uuid="8892D9CAAFA84C1C8E8A19460E06F268" name="ID">
+			<table_ref uuid="80732014A231423794CD02D36BFECE66" name="ArchivedBoard"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="E0A34CE03EDB9B41973E90C867E7F6E3" type="1">
+		<field_ref uuid="2BF1F8E89CA342DE9B3317905FAD2422" name="ID">
+			<table_ref uuid="D15BFB1C56944A279D16EE92E390FB32" name="Label"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="E0F91F0BF043A246B825D7362D102613" type="1">
+		<field_ref uuid="7550696C69B541988A813BEBCC458BD3" name="ID">
+			<table_ref uuid="1986917A44DE443EB50200BA686B2220" name="Incident"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="E5F3789EC84FC840B7E66ADE2CB51F4E" type="1">
+		<field_ref uuid="2F46A5DE52064AE681537C10FD7936EF" name="ID">
+			<table_ref uuid="B891917E557B4B53BC96E08DF743E975" name="Note"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="EB73228500C34C4691552DAC1BFAE5B9" type="1">
+		<field_ref uuid="41AF8F3CBA7C4BEBB1BF4FD367B89771" name="ID">
+			<table_ref uuid="03D44B2325294355AA73C70CB3F605FA" name="Task"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="F442BE75229B8A43A2AB80FF4CD10D16" type="1">
+		<field_ref uuid="6C761DAECD1C4AAFAC8B1055EA66F3C4" name="ID">
+			<table_ref uuid="4CCC87092B144578AE247AD9C4D2EA81" name="List"/>
+		</field_ref>
+	</index>
+</base>

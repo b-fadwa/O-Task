@@ -1,0 +1,12 @@
+{
+  "name": "qodly_tags",
+  "version": "1.1.2",
+  "scope": "qodly_66c098bb4a695cf5df16",
+  "author": {
+    "name": "Qodly Team",
+    "email": "contact@qodly.com",
+    "url": "https://qodly.com"
+  },
+  "module": "components",
+  "remoteEntryFileName": "components.js"
+}

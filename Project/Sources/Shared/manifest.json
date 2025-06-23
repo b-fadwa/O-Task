@@ -1,0 +1,65 @@
+{
+  "applicationName": "O'Task",
+  "description": "This is some Screenshots of certain parts of our project management application.",
+  "details": "The application is intended to manage boards (projects), tasks, and incidents in a structured manner.",
+  "note": "NB: In order to use the mailing feature, you'll have to create an account with your email with a mailing api (eg: sendgrid.. ), store your credentials in the env.json file in the credentials folder located in the Shared folder.",
+  "visuals": [
+    {
+      "description": "Dashboard User",
+      "path": "/$shared/visuals/DashBoard.png",
+      "image": "/$shared/visuals/DashBoard.png"
+    },
+    {
+      "description": "All Users",
+      "path": "/$shared/visuals/AllUsers.png",
+      "image": "/$shared/visuals/AllUsers.png"
+    },
+    {
+      "description": "All Boards",
+      "path": "/$shared/visuals/AllBoards.png",
+      "image": "/$shared/visuals/AllBoards.png"
+    },
+    {
+      "description": "Tasks By Lists",
+      "path": "/$shared/visuals/TasksByLists.png",
+      "image": "/$shared/visuals/TasksByLists.png"
+    },
+    {
+      "description": "Tasks By Priorities",
+      "path": "/$shared/visuals/TasksByPriorities.png",
+      "image": "/$shared/visuals/TasksByPriorities.png"
+    },
+    {
+      "description": "Tasks Normal View",
+      "path": "/$shared/visuals/TasksNormalView.png",
+      "image": "/$shared/visuals/TasksNormalView.png"
+    },
+    {
+      "description": "Details Task",
+      "path": "/$shared/visuals/DetailsTask.png",
+      "image": "/$shared/visuals/DetailsTask.png"
+    },
+    {
+      "description": "Incidents",
+      "path": "/$shared/visuals/Incidents.png",
+      "image": "/$shared/visuals/Incidents.png"
+    },
+    {
+      "description": "Details Incident",
+      "path": "/$shared/visuals/DetailsIncident.png",
+      "image": "/$shared/visuals/DetailsIncident.png"
+    }
+  ],
+  "logo": {
+    "small": "logo_small_path",
+    "large": "/$shared/logos/Q-2.svg"
+  },
+  "qodlyVersion": "all",
+  "author": {
+    "name": "Qodly",
+    "url": "https://qodly.com/"
+  },
+  "category": "Qodly starters",
+  "language": "English",
+	"version": "1.1.0"
+}

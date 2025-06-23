@@ -1,0 +1,301 @@
+{
+	"forceLogin": false,
+	"permissions": {
+		"allowed": [
+			{
+				"applyTo": "Board.private",
+				"type": "attribute",
+				"read": [
+					"boardUserDeveloper",
+					"currentUser"
+				],
+				"create": [
+					"boardUserDeveloper",
+					"privateBoardOrNot",
+					"currentUser"
+				],
+				"update": [
+					"boardUserDeveloper",
+					"privateBoardOrNot",
+					"currentUser"
+				]
+			},
+			{
+				"applyTo": "Board.user",
+				"type": "attribute",
+				"read": [
+					"boardUserDeveloper",
+					"currentUser"
+				],
+				"create": [
+					"boardUserDeveloper",
+					"currentUser",
+					"chooseUserBoard"
+				],
+				"update": [
+					"boardUserDeveloper",
+					"currentUser",
+					"chooseUserBoard"
+				]
+			},
+			{
+				"applyTo": "Incident",
+				"type": "dataclass",
+				"read": [
+					"Incident"
+				],
+				"create": [
+					"Incident"
+				],
+				"execute": [
+					"Incident"
+				]
+			},
+			{
+				"applyTo": "List",
+				"type": "dataclass",
+				"read": [
+					"List"
+				],
+				"create": [
+					"List"
+				],
+				"execute": [
+					"List"
+				]
+			},
+			{
+				"applyTo": "Board",
+				"type": "dataclass",
+				"read": [
+					"Board"
+				],
+				"create": [
+					"Board"
+				],
+				"update": [
+					"Board"
+				],
+				"execute": [
+					"Board"
+				]
+			},
+			{
+				"applyTo": "User",
+				"type": "dataclass",
+				"read": [
+					"currentUser"
+				],
+				"update": [
+					"currentUser"
+				],
+				"execute": [
+					"currentUser"
+				]
+			},
+			{
+				"applyTo": "User.getCurrentUser",
+				"type": "method",
+				"execute": [
+					"currentUser"
+				],
+				"promote": [
+					"currentUser"
+				]
+			},
+			{
+				"applyTo": "User.myBoards",
+				"type": "method",
+				"execute": [
+					"currentUser"
+				]
+			},
+			{
+				"applyTo": "User.userNotes",
+				"type": "method",
+				"execute": [
+					"currentUser"
+				]
+			},
+			{
+				"applyTo": "User.notifications",
+				"type": "attribute",
+				"read": [
+					"currentUser"
+				]
+			},
+			{
+				"applyTo": "User.searchUser",
+				"type": "method",
+				"execute": [
+					"currentUser"
+				]
+			},
+			{
+				"applyTo": "User.pictureProfil",
+				"type": "attribute",
+				"read": [
+					"currentUser"
+				],
+				"create": [
+					"currentUser"
+				],
+				"update": [
+					"currentUser"
+				],
+				"drop": [
+					"currentUser"
+				]
+			},
+			{
+				"applyTo": "Task",
+				"type": "dataclass",
+				"read": [
+					"Task"
+				],
+				"create": [
+					"Task"
+				]
+			},
+			{
+				"applyTo": "Task.tasksPriority",
+				"type": "method",
+				"execute": [
+					"Task"
+				]
+			},
+			{
+				"applyTo": "Task.create",
+				"type": "method",
+				"execute": [
+					"Task"
+				]
+			},
+			{
+				"applyTo": "Task.searchTaskByList",
+				"type": "method",
+				"execute": [
+					"Task"
+				]
+			},
+			{
+				"applyTo": "Comment",
+				"type": "dataclass",
+				"read": [
+					"Task"
+				]
+			},
+			{
+				"applyTo": "Comment.content",
+				"type": "attribute",
+				"read": [
+					"Task"
+				]
+			}
+		]
+	},
+	"privileges": [
+		{
+			"id": "bmBSA3ZpVqAyAD4ERgkoPk",
+			"privilege": "boardUserDeveloper",
+			"includes": []
+		},
+		{
+			"id": "2wUpiFijnRQMGUhrmYdCN4",
+			"privilege": "privateBoardOrNot",
+			"includes": []
+		},
+		{
+			"id": "8xkcHuDGtUqYVs4dGWzBTM",
+			"privilege": "Engineering",
+			"includes": []
+		},
+		{
+			"id": "1yqnHhtzLcjoaeH6CLJgBX",
+			"privilege": "Marketing",
+			"includes": []
+		},
+		{
+			"id": "cW4VQYkL5qoBKkMueoMHtL",
+			"privilege": "Tag",
+			"includes": []
+		},
+		{
+			"id": "wPfNNH7gR5cNMZqhijQFrb",
+			"privilege": "Incident",
+			"includes": []
+		},
+		{
+			"id": "vNnuvHNDGF3gYcEX6xWASg",
+			"privilege": "List",
+			"includes": []
+		},
+		{
+			"id": "5XRCcfCyCcM7WCKW9QWQDV",
+			"privilege": "Board",
+			"includes": []
+		},
+		{
+			"id": "g1TEVZs24YoL9XvjtnP4Hk",
+			"privilege": "currentUser",
+			"includes": []
+		},
+		{
+			"id": "u3cuKq1RKyQncHPuDEXGaf",
+			"privilege": "Task",
+			"includes": []
+		},
+		{
+			"id": "eR54mVseaoMSCqbwiWBrH5",
+			"privilege": "chooseUserBoard",
+			"includes": [
+				"privateBoardOrNot"
+			]
+		}
+	],
+	"roles": [
+		{
+			"id": "r1yDEEfH6xvN6t9d3eFCA2",
+			"role": "Admin",
+			"privileges": [
+				"Task",
+				"Board",
+				"List",
+				"Tag",
+				"Incident",
+				"currentUser",
+				"chooseUserBoard"
+			]
+		},
+		{
+			"id": "qpvg8yWAdahoBC7xRcusCd",
+			"role": "ProjectManager",
+			"privileges": [
+				"Board",
+				"List",
+				"Incident",
+				"guest",
+				"Task",
+				"Tag",
+				"currentUser",
+				"Marketing",
+				"privateBoardOrNot"
+			]
+		},
+		{
+			"id": "rwyq8svjywVnJFoHcL4iCg",
+			"role": "Developer",
+			"privileges": [
+				"Board",
+				"List",
+				"Tag",
+				"Task",
+				"Incident",
+				"guest",
+				"currentUser",
+				"Engineering",
+				"boardUserDeveloper"
+			]
+		}
+	]
+}

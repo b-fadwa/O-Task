@@ -1,0 +1,711 @@
+{
+	"shared": [
+		{
+			"id": "board",
+			"type": "entity",
+			"dataclass": "Board",
+			"namespace": "shared",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "modal",
+			"type": "scalar",
+			"namespace": "shared",
+			"dataType": "string",
+			"initialValue": "EditBoard"
+		},
+		{
+			"id": "task",
+			"type": "entity",
+			"dataclass": "Task",
+			"namespace": "shared",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "list",
+			"type": "entity",
+			"dataclass": "List",
+			"namespace": "shared",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "users",
+			"type": "entitysel",
+			"dataclass": "User",
+			"namespace": "shared",
+			"initialValue": "all",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "selUser",
+			"type": "entity",
+			"dataclass": "User",
+			"namespace": "shared",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "selectedList",
+			"type": "entity",
+			"dataclass": "List",
+			"namespace": "shared",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "lists",
+			"type": "entitysel",
+			"dataclass": "List",
+			"namespace": "shared",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "tasks",
+			"type": "entitysel",
+			"dataclass": "Task",
+			"namespace": "shared",
+			"initialValue": "all",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "userFirst",
+			"type": "entity",
+			"dataclass": "User",
+			"from": "users",
+			"namespace": "shared",
+			"initialValue": "first",
+			"depth": null
+		},
+		{
+			"id": "priority",
+			"type": "scalar",
+			"namespace": "shared",
+			"dataType": "string",
+			"initialValue": "none"
+		},
+		{
+			"id": "notifications",
+			"type": "entitysel",
+			"dataclass": "Notification",
+			"namespace": "shared",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "tracker",
+			"type": "scalar",
+			"namespace": "shared",
+			"dataType": "number",
+			"initialValue": "0",
+			"events": [
+				{
+					"type": "simple-action",
+					"id": "mvGsrk8qwwiDm8pQvD7Zba",
+					"events": [
+						"onChange"
+					],
+					"action": "copy",
+					"actionType": "datasource",
+					"datasource": {
+						"name": "tracker",
+						"type": "scalar",
+						"namespace": "shared",
+						"from": "",
+						"dataType": "number",
+						"target": "task.track",
+						"targetNamespace": "shared",
+						"targetType": "long"
+					}
+				},
+				{
+					"type": "method",
+					"dataclass": "BoardEntity",
+					"events": [
+						"onChange"
+					],
+					"id": "9ioNFP2URrPHnppQ3C51VJ",
+					"method": "board.lists",
+					"params": [],
+					"namespace": "shared",
+					"datasource": "",
+					"returns": {
+						"name": "selection",
+						"type": "cs.ListSelection",
+						"datasource": "lists"
+					}
+				}
+			]
+		},
+		{
+			"id": "selNotif",
+			"type": "entity",
+			"dataclass": "Notification",
+			"namespace": "shared",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "boardEntity",
+			"type": "entity",
+			"dataclass": "Board",
+			"namespace": "shared",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "userTasks",
+			"type": "entitysel",
+			"dataclass": "Task",
+			"from": "user.tasks",
+			"namespace": "shared",
+			"initialValue": "all",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "boardLists",
+			"type": "entitysel",
+			"dataclass": "List",
+			"namespace": "shared",
+			"initialValue": "all",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "taskIncidents",
+			"type": "entitysel",
+			"dataclass": "TaskIncident",
+			"from": "task.problems",
+			"namespace": "shared",
+			"initialValue": "all",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "taskTags",
+			"type": "entitysel",
+			"dataclass": "Tag",
+			"from": "task.tags",
+			"namespace": "shared",
+			"initialValue": "all",
+			"depth": null,
+			"pageSize": 5
+		},
+		{
+			"id": "taskComments",
+			"type": "entitysel",
+			"dataclass": "Comment",
+			"from": "task.comments",
+			"namespace": "shared",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "user",
+			"type": "entity",
+			"dataclass": "User",
+			"namespace": "shared",
+			"initialValue": "empty",
+			"depth": null
+		},
+		{
+			"id": "searchUser",
+			"type": "scalar",
+			"namespace": "shared",
+			"dataType": "string",
+			"initialValue": ""
+		}
+	],
+	"Boards": [
+		{
+			"id": "usersBoard",
+			"type": "entitysel",
+			"dataclass": "User",
+			"namespace": "Boards",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "privateBoards1",
+			"type": "scalar",
+			"namespace": "Boards",
+			"dataType": "array",
+			"initialValue": []
+		},
+		{
+			"id": "boardTasks",
+			"type": "entitysel",
+			"dataclass": "Task",
+			"namespace": "Boards",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		}
+	],
+	"Notes": [
+		{
+			"id": "note",
+			"type": "entity",
+			"dataclass": "Note",
+			"namespace": "Notes",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "NoteSel",
+			"type": "entity",
+			"dataclass": "Note",
+			"namespace": "Notes",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "searchNote",
+			"type": "scalar",
+			"namespace": "Notes",
+			"dataType": "string",
+			"initialValue": ""
+		},
+		{
+			"id": "userNotes",
+			"type": "entitysel",
+			"dataclass": "Note",
+			"namespace": "Notes",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "pinnedNotes",
+			"type": "entitysel",
+			"dataclass": "Note",
+			"namespace": "Notes",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "noteLabels",
+			"type": "entitysel",
+			"dataclass": "Label",
+			"namespace": "Notes",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		}
+	],
+	"problems": [
+		{
+			"id": "incidents",
+			"type": "entitysel",
+			"dataclass": "Incident",
+			"namespace": "problems",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "incidentSel",
+			"type": "entity",
+			"dataclass": "Incident",
+			"from": "incidents",
+			"namespace": "problems",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "selectedIncident",
+			"type": "entity",
+			"dataclass": "Incident",
+			"namespace": "problems",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "taskIncident",
+			"type": "entity",
+			"dataclass": "TaskIncident",
+			"namespace": "problems",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "incidentComments",
+			"type": "entitysel",
+			"dataclass": "Comment",
+			"from": "selectedIncident.comments",
+			"namespace": "problems",
+			"initialValue": "all",
+			"depth": null,
+			"pageSize": 100
+		}
+	],
+	"priorities": [
+		{
+			"id": "priorityNone",
+			"type": "scalar",
+			"namespace": "priorities",
+			"dataType": "string",
+			"initialValue": "none"
+		},
+		{
+			"id": "priorityLow",
+			"type": "scalar",
+			"namespace": "priorities",
+			"dataType": "string",
+			"initialValue": "low"
+		},
+		{
+			"id": "priorityMedium",
+			"type": "scalar",
+			"namespace": "priorities",
+			"dataType": "string",
+			"initialValue": "medium"
+		},
+		{
+			"id": "priorityHigh",
+			"type": "scalar",
+			"namespace": "priorities",
+			"dataType": "string",
+			"initialValue": "high"
+		},
+		{
+			"id": "allPriorities",
+			"type": "scalar",
+			"namespace": "priorities",
+			"dataType": "array",
+			"initialValue": []
+		},
+		{
+			"id": "selPriority",
+			"type": "scalar",
+			"from": "allPriorities",
+			"namespace": "priorities",
+			"dataType": "object",
+			"initialValue": ""
+		},
+		{
+			"id": "tasksNone",
+			"type": "entitysel",
+			"dataclass": "Task",
+			"namespace": "priorities",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "tasksLow",
+			"type": "entitysel",
+			"dataclass": "Task",
+			"namespace": "priorities",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "tasksMedium",
+			"type": "entitysel",
+			"dataclass": "Task",
+			"namespace": "priorities",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "tasksHigh",
+			"type": "entitysel",
+			"dataclass": "Task",
+			"namespace": "priorities",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		}
+	],
+	"choices": [
+		{
+			"id": "selectedList",
+			"type": "entity",
+			"dataclass": "List",
+			"namespace": "choices",
+			"initialValue": "first",
+			"depth": null,
+			"events": [
+				{
+					"type": "method",
+					"dataclass": "Task",
+					"events": [
+						"onChange"
+					],
+					"id": "93xgv6SmYWdWKy1btFdtVg",
+					"method": "ds.Task.searchTaskByList",
+					"params": [
+						{
+							"name": "Search",
+							"type": "string",
+							"datasource": "choices:searchTask",
+							"id": "6vwVY3nFSPfhaRo1YhVvUT"
+						},
+						{
+							"name": "board",
+							"type": "cs.BoardEntity",
+							"datasource": "shared:board",
+							"id": "gePYzDpgQJV1saudViqvCB"
+						},
+						{
+							"name": "priority",
+							"type": "string",
+							"datasource": "choices:priority",
+							"id": "kvGyLSL61o6qy8REr6LoX8"
+						},
+						{
+							"name": "list",
+							"type": "cs.ListEntity",
+							"datasource": "choices:selectedList",
+							"id": "b9jgYQJHWxH4xBh5L1Mk2x"
+						},
+						{
+							"name": "user",
+							"type": "cs.UserEntity",
+							"datasource": "choices:user",
+							"id": "n4T1JhdHUDxLwFY36ug5As"
+						}
+					],
+					"datasource": "",
+					"returns": {
+						"name": "selection",
+						"type": "cs.TaskSelection",
+						"datasource": "tasks:tasksBoard"
+					}
+				}
+			]
+		},
+		{
+			"id": "priority",
+			"type": "scalar",
+			"namespace": "choices",
+			"dataType": "string",
+			"initialValue": "all",
+			"events": []
+		},
+		{
+			"id": "searchTask",
+			"type": "scalar",
+			"namespace": "choices",
+			"dataType": "string",
+			"initialValue": ""
+		},
+		{
+			"id": "user",
+			"type": "entity",
+			"dataclass": "User",
+			"namespace": "choices",
+			"initialValue": "",
+			"depth": null,
+			"events": [
+				{
+					"type": "method",
+					"dataclass": "Task",
+					"events": [
+						"onChange"
+					],
+					"id": "r5KhY2D7r2SYRBXgHiP4h1",
+					"method": "ds.Task.searchTaskByList",
+					"params": [
+						{
+							"name": "Search",
+							"type": "string",
+							"datasource": "choices:searchTask",
+							"id": "smqQjkAWcEdSY8WSWtUgNB"
+						},
+						{
+							"name": "board",
+							"type": "cs.BoardEntity",
+							"datasource": "shared:board",
+							"id": "9xRRyea3mSR6zL8igXvcrB"
+						},
+						{
+							"name": "priority",
+							"type": "string",
+							"datasource": "choices:priority",
+							"id": "1UNkMhRd5v4J3nBxX45gWe",
+							"isHardCoded": false,
+							"hardCodedType": "string",
+							"hardCodedValue": "all"
+						},
+						{
+							"name": "list",
+							"type": "cs.ListEntity",
+							"datasource": "choices:selectedList",
+							"id": "ixSzZfcaiSSVkgNWTacqYM"
+						},
+						{
+							"name": "user",
+							"type": "cs.UserEntity",
+							"datasource": "choices:user",
+							"id": "6DfTQwKrZQVtPDDmEXeKLf"
+						}
+					],
+					"datasource": "",
+					"returns": {
+						"name": "selection",
+						"type": "cs.TaskSelection",
+						"datasource": "tasks:tasksBoard"
+					}
+				}
+			]
+		}
+	],
+	"activities": [
+		{
+			"id": "incidentActivities",
+			"type": "entitysel",
+			"dataclass": "Activity",
+			"namespace": "activities",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "taskActivities",
+			"type": "entitysel",
+			"dataclass": "Activity",
+			"namespace": "activities",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		}
+	],
+	"labels": [
+		{
+			"id": "labels",
+			"type": "entitysel",
+			"dataclass": "Label",
+			"namespace": "labels",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "label",
+			"type": "entity",
+			"dataclass": "Label",
+			"from": "labels",
+			"namespace": "labels",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "selectedLabel",
+			"type": "scalar",
+			"namespace": "labels",
+			"dataType": "string",
+			"initialValue": "all"
+		},
+		{
+			"id": "labelsSelected",
+			"type": "entitysel",
+			"dataclass": "Label",
+			"namespace": "labels",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		}
+	],
+	"dashboard": [
+		{
+			"id": "tasks",
+			"type": "entitysel",
+			"dataclass": "Task",
+			"namespace": "dashboard",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		}
+	],
+	"tasks": [
+		{
+			"id": "tasksList",
+			"type": "entitysel",
+			"dataclass": "Task",
+			"namespace": "tasks",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "tasksBoard",
+			"type": "entitysel",
+			"dataclass": "Task",
+			"namespace": "tasks",
+			"initialValue": "",
+			"depth": null,
+			"pageSize": 100
+		}
+	],
+	"navigation": [
+		{
+			"id": "displayTasks",
+			"type": "scalar",
+			"namespace": "navigation",
+			"dataType": "number",
+			"initialValue": "1"
+		},
+		{
+			"id": "page",
+			"type": "scalar",
+			"namespace": "navigation",
+			"dataType": "string",
+			"initialValue": "ContentDashboard"
+		},
+		{
+			"id": "taskList",
+			"type": "scalar",
+			"namespace": "navigation",
+			"dataType": "string",
+			"initialValue": "TaskByList"
+		}
+	],
+	"Qodly": [
+		{
+			"id": "Location",
+			"dataType": "object",
+			"type": "scalar",
+			"namespace": "Qodly",
+			"initialValue": {
+				"urlQuery": [],
+				"urlPath": {},
+				"Anchor": ""
+			},
+			"schema": {
+				"type": "object",
+				"properties": [
+					{
+						"name": "urlQuery",
+						"type": "array",
+						"initialValue": []
+					},
+					{
+						"name": "urlPath",
+						"type": "object",
+						"initialValue": {}
+					},
+					{
+						"name": "Anchor",
+						"type": "string",
+						"initialValue": ""
+					}
+				]
+			}
+		}
+	]
+}

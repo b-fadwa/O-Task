@@ -1,0 +1,231 @@
+{
+	"conditions": [
+		{
+			"id": "mY18h23gpYTj6LuENWVfG1",
+			"type": "datasource",
+			"name": "noAssociatedTasks",
+			"op": "eq",
+			"value": "0",
+			"valueType": "hardCoded",
+			"path": "problems:selectedIncident.nbrTasks",
+			"dsType": "long",
+			"dataType": "number"
+		},
+		{
+			"id": "o1bHH8mJmqdqF3F4Zb3wrb",
+			"type": "datasource",
+			"name": "noAssignee",
+			"op": "isnull",
+			"value": "",
+			"valueType": "hardCoded",
+			"path": "problems:selectedIncident.assignee",
+			"dsType": "entity"
+		},
+		{
+			"id": "wEYWuXncJA99faBg9BXxs7",
+			"type": "datasource",
+			"name": "assigned",
+			"op": "notnull",
+			"value": "",
+			"valueType": "hardCoded",
+			"path": "problems:selectedIncident.assignee",
+			"dsType": "entity"
+		},
+		{
+			"id": "aVQAMxU6KXypH5tNGBotsV",
+			"type": "datasource",
+			"name": "associatedTasks",
+			"op": "neq",
+			"value": "0",
+			"valueType": "hardCoded",
+			"path": "problems:selectedIncident.nbrTasks",
+			"dsType": "long",
+			"dataType": "number"
+		},
+		{
+			"id": "pAy7BNUoawkbavPCepimaA",
+			"type": "combination",
+			"op": "and",
+			"conditions": [
+				{
+					"id": "rn9Zm1AMZMpYKFn4RZFGbd",
+					"type": "combination",
+					"op": "or",
+					"conditions": [
+						{
+							"id": "6ZzdZYJm65UiQ49JJURPX1",
+							"type": "datasource",
+							"name": "role is developer",
+							"value": "Developer",
+							"valueType": "hardCoded",
+							"path": "shared:user.role",
+							"dsType": "string",
+							"op": "eq"
+						},
+						{
+							"id": "95kaK55H5AjwUmPaadpvRn",
+							"type": "datasource",
+							"name": "private board",
+							"value": "",
+							"valueType": "hardCoded",
+							"path": "shared:board.private",
+							"dsType": "bool",
+							"op": "istrue"
+						}
+					]
+				},
+				{
+					"id": "gDkQ2qYe1Jv8quzHYZdA5H",
+					"type": "datasource",
+					"name": "task's user is the one connected",
+					"value": "shared:user.fullName",
+					"valueType": "datasource",
+					"path": "shared:task.user.fullName",
+					"dsType": "string",
+					"op": "eq"
+				}
+			],
+			"name": "developerAndHiddenAssignee"
+		},
+		{
+			"id": "guvbBvKesALQ5SzFSEnBDR",
+			"type": "combination",
+			"op": "or",
+			"conditions": [
+				{
+					"id": "3s1kS7uiAhxwpsFRqvvfQu",
+					"type": "datasource",
+					"name": "empty string",
+					"value": "",
+					"valueType": "hardCoded",
+					"path": "shared:task.name",
+					"dsType": "string",
+					"op": "eq"
+				},
+				{
+					"id": "saS3aUUGPrjM8jCYmyEJ8K",
+					"type": "datasource",
+					"name": "null value",
+					"value": "",
+					"valueType": "hardCoded",
+					"path": "shared:task.name",
+					"dsType": "string",
+					"op": "isnull"
+				}
+			],
+			"name": "emptyNameTask"
+		},
+		{
+			"id": "5bD2WY4EvmqP2HZP6qaTPj",
+			"type": "combination",
+			"op": "and",
+			"conditions": [
+				{
+					"id": "jr3WfTnSdVp5u4p344CNJX",
+					"type": "datasource",
+					"name": "role not developer",
+					"value": "Developer",
+					"valueType": "hardCoded",
+					"path": "shared:user.role",
+					"dsType": "string",
+					"op": "neq"
+				},
+				{
+					"id": "o4bmXC4rGw8RM6xPwzjN9x",
+					"type": "datasource",
+					"name": "public board",
+					"value": "",
+					"valueType": "hardCoded",
+					"path": "shared:board.private",
+					"dsType": "bool",
+					"op": "isfalse"
+				}
+			],
+			"name": "notDeveloperAndShowedAssignee"
+		},
+		{
+			"id": "oWRYE5aibPXZserW8tVTdy",
+			"type": "combination",
+			"op": "or",
+			"conditions": [
+				{
+					"id": "99wboHfEFnCgujsiaJ1Esv",
+					"type": "datasource",
+					"name": "null",
+					"value": "",
+					"valueType": "hardCoded",
+					"path": "shared:task.description",
+					"dsType": "string",
+					"op": "isnull"
+				},
+				{
+					"id": "kC1C6Pyc4FPiJ9QSU8NQej",
+					"type": "datasource",
+					"name": "empty",
+					"value": "",
+					"valueType": "hardCoded",
+					"path": "shared:task.description",
+					"dsType": "string",
+					"op": "eq"
+				}
+			],
+			"name": "noDescriptionTask"
+		},
+		{
+			"id": "h6AyrtLKajTt2MTvzfpYQg",
+			"type": "combination",
+			"op": "and",
+			"conditions": [
+				{
+					"id": "hdS6AkGwKmve4xmi6V7aAe",
+					"type": "datasource",
+					"name": "start date not filled",
+					"value": "",
+					"valueType": "hardCoded",
+					"path": "shared:task.startDate",
+					"dsType": "date",
+					"op": "isnull"
+				},
+				{
+					"id": "nkpPe4hcKWmoNFepGbLREC",
+					"type": "datasource",
+					"name": "end date filled",
+					"value": "",
+					"valueType": "hardCoded",
+					"path": "shared:task.endDate",
+					"dsType": "date",
+					"op": "notnull"
+				}
+			],
+			"name": "startDateNotFilled"
+		},
+		{
+			"id": "oXR8HKmraWxbjwcgbwNnf1",
+			"type": "combination",
+			"op": "and",
+			"conditions": [
+				{
+					"id": "pEXwr8sNeS4bux5kB9hQ8A",
+					"type": "datasource",
+					"name": "start is higher than end",
+					"value": "shared:task.endDate",
+					"valueType": "datasource",
+					"path": "shared:task.startDate",
+					"dsType": "date",
+					"op": "gt"
+				},
+				{
+					"id": "wgCourkheJaBZkA7C7sPkq",
+					"type": "datasource",
+					"name": "end date not null",
+					"value": "",
+					"valueType": "hardCoded",
+					"path": "shared:task.endDate",
+					"dsType": "date",
+					"op": "notnull"
+				}
+			],
+			"name": "startIsHigherThanEnd"
+		}
+	]
+}
