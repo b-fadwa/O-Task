@@ -448,48 +448,31 @@
 				"events": [
 					{
 						"type": "method",
-						"dataclass": "User",
+						"dataclass": "DataStore",
 						"events": [
 							"onclick"
 						],
-						"id": "dLNM1pxVn5DY7Sww78zKFq",
-						"method": "ds.User.signIn",
+						"id": "oEEpyfw6pJ8YhnUcMN3zFc",
+						"method": "ds.authentify",
 						"params": [
 							{
 								"name": "email",
 								"type": "Text",
 								"datasource": "email",
-								"id": "nZar1G4zksCcbYxiiothN3"
+								"id": "7ZPy2tHCKYwW8QSEsKz1XX"
 							},
 							{
 								"name": "password",
 								"type": "Text",
 								"datasource": "password",
-								"id": "mrrqhyukQ4dVPQi42SjTgH"
+								"id": "kMWmWZi797fFEYRxgaZ4QJ"
 							}
 						],
 						"datasource": "",
 						"returns": {
-							"name": "user",
-							"type": "cs.UserEntity",
-							"datasource": "shared:user"
-						},
-						"feedback": true
-					},
-					{
-						"type": "method",
-						"dataclass": "DataStore",
-						"events": [
-							"onclick"
-						],
-						"id": "x2AM4vF2xL99bUiFU55AAc",
-						"method": "ds.pageLoaderNav",
-						"params": [],
-						"datasource": "",
-						"returns": {
-							"name": "serverRef",
-							"type": "Text",
-							"datasource": "shared:pageLoader"
+							"name": "result",
+							"type": "Boolean",
+							"datasource": ""
 						},
 						"feedback": true
 					}

@@ -1,7 +1,19 @@
 Class extends DataStoreImplementation
 
-exposed Function pageLoaderNav()->$serverRef : Text
-	$serverRef:=(Session:C1714.storage.payload#Null:C1517) ? "Index" : "SignIn"
+exposed Function authentify($email : Text; $password : Text) : Boolean
+	If ($email#"")
+		var $user : cs:C1710.UserEntity:=ds:C1482.User.query("email = :1"; $email).first()
+		If ($user#Null:C1517)
+			If (Verify password hash:C1534($password; $user.password))
+				Use (Session:C1714.storage)
+					Session:C1714.storage.payLoad:=New shared object:C1526("ID"; $user.ID; "login"; $user.email)
+				End use 
+				return Session:C1714.setPrivileges("Administrator")
+				Web Form:C1735.setMessage("Connection Successfull!")
+				//return $user
+			End if 
+		End if 
+	End if 
 	
 exposed Function setCss($serverRef : Text; $cssClass : Text)
 	var $component : 4D:C1709.WebFormItem
@@ -43,6 +55,6 @@ exposed Function getCredentials() : Object
 	var $text : Text
 	var $fileContent : Object
 	$jsonFile:=File:C1566("/PROJECT/Sources/Shared/credentials/env.json")  //fill the json file with your sendGrid api credentials
-	text:=$jsonFile.getText()
-	$fileContent:=JSON Parse:C1218(text; 38)
+	$text:=$jsonFile.getText()
+	$fileContent:=JSON Parse:C1218($text; 38)
 	return $fileContent

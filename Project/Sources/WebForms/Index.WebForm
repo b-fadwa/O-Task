@@ -146,7 +146,9 @@
 				}
 			}
 		],
-		"defaultStates": []
+		"defaultStates": [
+			"tpeCBy6y4hzkAYmM8SpRxk"
+		]
 	},
 	"components": {
 		"ROOT": {
@@ -158,23 +160,20 @@
 				"classNames": [],
 				"events": [
 					{
-						"type": "simple-action",
-						"id": "ti7P5FK43J8pKv6uFN3mrA",
+						"type": "method",
+						"dataclass": "User",
 						"events": [
 							"oninit"
 						],
-						"action": "",
-						"actionType": "state",
-						"datasource": {
-							"name": ""
-						},
-						"state": {
-							"action": "add",
-							"states": [
-								"tpeCBy6y4hzkAYmM8SpRxk"
-							]
-						},
-						"disabled": false
+						"id": "9sxEQu79Wcqtk8cp7BhuMH",
+						"method": "ds.User.getCurrentUser",
+						"params": [],
+						"datasource": "",
+						"returns": {
+							"name": "result",
+							"type": "cs.UserEntity",
+							"datasource": "shared:user"
+						}
 					},
 					{
 						"type": "simple-action",

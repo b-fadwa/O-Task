@@ -5,12 +5,12 @@ Class constructor
 	
 	var $server : Object
 	var $transporter : 4D:C1709.SMTPTransporter
-	var credentials : Object:=ds:C1482.getCredentials()
+	var $credentials : Object:=ds:C1482.getCredentials()
 	$server:=New object:C1471()
-	$server.host:=credentials.host
-	$server.port:=credentials.port
-	$server.user:=credentials.user
-	$server.password:=credentials.password
+	$server.host:=$credentials.host
+	$server.port:=$credentials.port
+	$server.user:=$credentials.user
+	$server.password:=$credentials.password
 	This:C1470.transporter:=4D:C1709.SMTPTransporter.new($server)
 	
 Function sendMail($subject : Text; $title : Text; $content : Text; $userEmail : Text)->$result : Text

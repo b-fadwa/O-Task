@@ -13,23 +13,23 @@
 				"id": "gGciULVYf5iAtd6RwGirnG",
 				"conditions": {
 					"id": "bcVQzfZbAe9F1rbe7QTRQz",
-					"type": "datasource",
-					"name": "condition",
-					"value": "SignIn",
+					"type": "privilege",
+					"name": "privilege is not administrator",
+					"value": "Administrator",
 					"valueType": "hardCoded",
 					"path": "shared:pageLoader",
 					"dsType": "string",
-					"op": "eq"
+					"op": "neq"
 				}
 			},
 			{
-				"label": "index",
+				"label": "homePage",
 				"id": "63txUtsmxuBYk9rtGjrU9D",
 				"conditions": {
 					"id": "wLBuTaHfJyPvLszvPCB7mX",
-					"type": "datasource",
-					"name": "condition",
-					"value": "Index",
+					"type": "privilege",
+					"name": "privilege is administrator",
+					"value": "Administrator",
 					"valueType": "hardCoded",
 					"path": "shared:pageLoader",
 					"dsType": "string",
@@ -82,11 +82,13 @@
 				},
 				"webform": "SignIn",
 				"serverSideRef": "",
-				"datasource": "shared:pageLoader"
+				"datasource": ""
 			},
 			"displayName": "Page Loader",
 			"custom": {
-				"states:63txUtsmxuBYk9rtGjrU9D": {}
+				"states:63txUtsmxuBYk9rtGjrU9D": {
+					"webform": "HomePage"
+				}
 			},
 			"parent": "ROOT",
 			"hidden": false,

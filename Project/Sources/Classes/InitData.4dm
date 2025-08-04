@@ -187,9 +187,9 @@ Function generateUsers()
 	$fakeUsers:=New collection:C1472()
 	$fakeUsers.push(New object:C1471("lastname"; "Qodly"; "firstname"; "User"; "email"; "qodlyuser@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"); New object:C1471("lastname"; "Devoe"; "firstname"; "Vail"; "email"; "Vail.Devoe@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"))
 	$fakeUsers.push(New object:C1471("lastname"; "test"; "firstname"; "test"; "email"; "test@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"); New object:C1471("lastname"; "Laramée"; "firstname"; "Philip"; "email"; "philipe.laramee@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"))
-/*$fakeUsers.push(New object("lastname"; "Smith"; "firstname"; "John"; "email"; "john.smith@4d.com"; "creationDate"; Current date; "role"; "Admin"); New object("lastname"; "Johnson"; "firstname"; "Emily"; "email"; "emily.johnson@4d.com"; "creationDate"; Current date; "role"; "Admin"); New object("lastname"; "Brown"; "firstname"; "Michael"; "email"; "michael.brown@4d.com"; "creationDate"; Current date; "role"; "Admin"); New object("lastname"; "Davis"; "firstname"; "Olivia"; "email"; "olivia.davis@4d.com"; "creationDate"; Current date; "role"; "Admin"); New object("lastname"; "Wilson"; "firstname"; "Daniel"; "email"; "daniel.wilson@4d.com"; "creationDate"; Current date; "role"; "Admin"))
-$fakeUsers.push(New object("lastname"; "Anderson"; "firstname"; "Sophia"; "email"; "sophia.anderson@4d.com"; "creationDate"; Current date; "role"; "Admin"); New object("lastname"; "Martinez"; "firstname"; "Liam"; "email"; "liam.martinez@4d.com"; "creationDate"; Current date; "role"; "Admin"); New object("lastname"; "Garcia"; "firstname"; "Isabella"; "email"; "isabella.garcia@4d.com"; "creationDate"; Current date; "role"; "Admin"); New object("lastname"; "Thomas"; "firstname"; "James"; "email"; "james.thomas@4d.com"; "creationDate"; Current date; "role"; "Admin"); New object("lastname"; "Robinson"; "firstname"; "Ava"; "email"; "ava.robinson@4d.com"; "creationDate"; Current date; "role"; "Admin"))
-*/
+	$fakeUsers.push(New object:C1471("lastname"; "Smith"; "firstname"; "John"; "email"; "john.smith@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"); New object:C1471("lastname"; "Johnson"; "firstname"; "Emily"; "email"; "emily.johnson@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"); New object:C1471("lastname"; "Brown"; "firstname"; "Michael"; "email"; "michael.brown@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"); New object:C1471("lastname"; "Davis"; "firstname"; "Olivia"; "email"; "olivia.davis@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"); New object:C1471("lastname"; "Wilson"; "firstname"; "Daniel"; "email"; "daniel.wilson@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"))
+	$fakeUsers.push(New object:C1471("lastname"; "Anderson"; "firstname"; "Sophia"; "email"; "sophia.anderson@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"); New object:C1471("lastname"; "Martinez"; "firstname"; "Liam"; "email"; "liam.martinez@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"); New object:C1471("lastname"; "Garcia"; "firstname"; "Isabella"; "email"; "isabella.garcia@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"); New object:C1471("lastname"; "Thomas"; "firstname"; "James"; "email"; "james.thomas@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"); New object:C1471("lastname"; "Robinson"; "firstname"; "Ava"; "email"; "ava.robinson@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"))
+	
 	For each ($item; $fakeUsers)
 		$status:=HTTP Get:C1157("https://source.unsplash.com/random/4"; $avatarBlob)
 		BLOB TO PICTURE:C682($avatarBlob; $avatar)
@@ -238,7 +238,7 @@ Function generateTasks()
 		$task.createdAt:=Current date:C33()
 		$task.createdTime:=Current time:C178()
 		$task.startDate:=Current date:C33()
-		$task.endDate:=Add to date:C393(Current date:C33(); 0; 0; (Random:C100%(15+2+1))-2)  // for random, it's between -2 and 15
+		$task.endDate:=Add to date:C393(Current date:C33(); 0; 0; (Random:C100%(15-1+1))+1)  // for random, it's between 1 and 15
 		$task.name:=$item
 		$task.description:=This:C1470.sentences.at(Random:C100%This:C1470.sentences.length)
 		$task.track:=(Random:C100%(25-5+1))+5
