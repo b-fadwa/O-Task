@@ -177,38 +177,21 @@
 						"disabled": false
 					},
 					{
-						"type": "method",
-						"dataclass": "User",
-						"events": [
-							"oninit"
-						],
-						"id": "2Nv99SyhTa2wTRWdLmcvDy",
-						"method": "ds.User.getCurrentUser",
-						"params": [],
-						"datasource": "",
-						"returns": {
-							"name": "user",
-							"type": "cs.UserEntity",
-							"datasource": "connectedUser"
-						}
-					},
-					{
 						"type": "simple-action",
-						"id": "wxhN37BD5mRjqL6oGDs7Gn",
+						"id": "eSisfuqwhkqfqDKKdjZxGb",
 						"events": [
 							"oninit"
 						],
 						"action": "copy",
 						"actionType": "datasource",
 						"datasource": {
-							"name": "connectedUser",
+							"name": "user",
 							"type": "entity",
-							"namespace": "",
-							"target": "user",
-							"targetNamespace": "shared",
+							"namespace": "shared",
+							"target": "connectedUser",
+							"targetNamespace": "",
 							"targetType": "entity"
-						},
-						"state": {}
+						}
 					},
 					{
 						"type": "method",

@@ -1051,7 +1051,7 @@
 					"paddingRight": "6px",
 					"paddingBottom": "6px",
 					"paddingLeft": "0px",
-					"display": "block",
+					"display": "none",
 					"overflow": "auto",
 					"flexDirection": "column"
 				},

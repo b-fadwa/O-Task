@@ -3,6 +3,35 @@
 	"permissions": {
 		"allowed": [
 			{
+				"applyTo": "User.signIn",
+				"type": "method",
+				"execute": [
+					"guest",
+					"currentUser"
+				]
+			},
+			{
+				"applyTo": "User",
+				"type": "dataclass",
+				"read": [
+					"guest",
+					"currentUser"
+				],
+				"update": [
+					"currentUser"
+				],
+				"execute": [
+					"currentUser"
+				]
+			},
+			{
+				"applyTo": "User.role",
+				"type": "attribute",
+				"update": [
+					"guest"
+				]
+			},
+			{
 				"applyTo": "Board.private",
 				"type": "attribute",
 				"read": [
@@ -78,29 +107,6 @@
 				],
 				"execute": [
 					"Board"
-				]
-			},
-			{
-				"applyTo": "User",
-				"type": "dataclass",
-				"read": [
-					"currentUser"
-				],
-				"update": [
-					"currentUser"
-				],
-				"execute": [
-					"currentUser"
-				]
-			},
-			{
-				"applyTo": "User.getCurrentUser",
-				"type": "method",
-				"execute": [
-					"currentUser"
-				],
-				"promote": [
-					"currentUser"
 				]
 			},
 			{

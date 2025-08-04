@@ -177,9 +177,33 @@ Function createData()
 	This:C1470.generateTaskTags()
 	This:C1470.generateComments()
 	This:C1470.generateIncidents()
-	ds:C1482.loadUser()
 	
-	// Note $labels
+Function generateUsers()
+	var $user : cs:C1710.UserEntity
+	var $counter : Integer
+	var $fakeUsers : Collection
+	var $avatarBlob : Blob
+	
+	$fakeUsers:=New collection:C1472()
+	$fakeUsers.push(New object:C1471("lastname"; "Qodly"; "firstname"; "User"; "email"; "qodlyuser@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"); New object:C1471("lastname"; "Devoe"; "firstname"; "Vail"; "email"; "Vail.Devoe@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"))
+	$fakeUsers.push(New object:C1471("lastname"; "test"; "firstname"; "test"; "email"; "test@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"); New object:C1471("lastname"; "Laramée"; "firstname"; "Philip"; "email"; "philipe.laramee@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"))
+/*$fakeUsers.push(New object("lastname"; "Smith"; "firstname"; "John"; "email"; "john.smith@4d.com"; "creationDate"; Current date; "role"; "Admin"); New object("lastname"; "Johnson"; "firstname"; "Emily"; "email"; "emily.johnson@4d.com"; "creationDate"; Current date; "role"; "Admin"); New object("lastname"; "Brown"; "firstname"; "Michael"; "email"; "michael.brown@4d.com"; "creationDate"; Current date; "role"; "Admin"); New object("lastname"; "Davis"; "firstname"; "Olivia"; "email"; "olivia.davis@4d.com"; "creationDate"; Current date; "role"; "Admin"); New object("lastname"; "Wilson"; "firstname"; "Daniel"; "email"; "daniel.wilson@4d.com"; "creationDate"; Current date; "role"; "Admin"))
+$fakeUsers.push(New object("lastname"; "Anderson"; "firstname"; "Sophia"; "email"; "sophia.anderson@4d.com"; "creationDate"; Current date; "role"; "Admin"); New object("lastname"; "Martinez"; "firstname"; "Liam"; "email"; "liam.martinez@4d.com"; "creationDate"; Current date; "role"; "Admin"); New object("lastname"; "Garcia"; "firstname"; "Isabella"; "email"; "isabella.garcia@4d.com"; "creationDate"; Current date; "role"; "Admin"); New object("lastname"; "Thomas"; "firstname"; "James"; "email"; "james.thomas@4d.com"; "creationDate"; Current date; "role"; "Admin"); New object("lastname"; "Robinson"; "firstname"; "Ava"; "email"; "ava.robinson@4d.com"; "creationDate"; Current date; "role"; "Admin"))
+*/
+	For each ($item; $fakeUsers)
+		$status:=HTTP Get:C1157("https://source.unsplash.com/random/4"; $avatarBlob)
+		BLOB TO PICTURE:C682($avatarBlob; $avatar)
+		$user:=ds:C1482.User.new()
+		$user.firstName:=$item.firstname
+		$user.lastName:=$item.lastname
+		$user.email:=$item.email
+		$user.password:=Generate password hash:C1533("123456")
+		$user.role:=$item.role
+		//$user.pictureProfil:=$avatar
+		$user.save()
+	End for each 
+	
+	// Note labels
 Function generateLabels()
 	var $labels : Collection
 	var $label : cs:C1710.LabelEntity
@@ -190,27 +214,6 @@ Function generateLabels()
 		$label.title:=$item
 		$label.isDefault:=True:C214
 		$label.save()
-	End for each 
-	
-	// Users
-Function generateUsers()
-	var $cloudUsers : Collection
-	var $oneUser; $info : Object
-	var $newUser : cs:C1710.UserEntity
-	var $image : Picture
-	var $request : 4D:C1709.HTTPRequest
-	
-	$cloudUsers:=cs:C1710.Qodly.Users.me.allUsers()
-	For each ($oneUser; $cloudUsers)
-		$newUser:=ds:C1482.User.new()
-		// In the last days, the link below for API $image generator is not working
-/*$request = 4D.HTTPRequest.new("https://source.unsplash.com/random/400x400?avatar,work").wait()
-		if ($request.response # null)
-			BLOB TO PICTURE($request.response.body; $image)
-			$newUser.pictureProfil := $image
-		end */
-		$newUser.email:=$oneUser.email
-		$info:=$newUser.save()
 	End for each 
 	
 	// Tasks
@@ -235,7 +238,7 @@ Function generateTasks()
 		$task.createdAt:=Current date:C33()
 		$task.createdTime:=Current time:C178()
 		$task.startDate:=Current date:C33()
-		$task.endDate:=Add to date:C393(Current date:C33(); 0; 0; (Random:C100%(15-1+1))+1)  // for random, it's between 1 and 15
+		$task.endDate:=Add to date:C393(Current date:C33(); 0; 0; (Random:C100%(15+2+1))-2)  // for random, it's between -2 and 15
 		$task.name:=$item
 		$task.description:=This:C1470.sentences.at(Random:C100%This:C1470.sentences.length)
 		$task.track:=(Random:C100%(25-5+1))+5
@@ -260,7 +263,7 @@ Function generateTasks()
 			$task.list:=$listTODO
 		End if 
 		$info:=$task.save()
-		This:C1470.createNotification("task"; $task.user; "New task has been assigned to you :\""+task.name+"\" in the board: \""+board.name+"\"")
+		This:C1470.createNotification("task"; $task.user; "New task has been assigned to you :\""+$task.name+"\" in the board: \""+$board.name+"\"")
 		$activity:=ds:C1482.Activity.new()
 		$activity.user:=$task.user
 		$activity.createdAt:=Current date:C33()
@@ -282,7 +285,6 @@ Function generateBoards()
 	var $users : cs:C1710.UserSelection
 	var $zone : Collection
 	var $p : Integer
-	// $boards = ["WrkPass"; "Tutorials"; "Support"; "TODO"; "O'Task"; "KnowBase"; "Formations"; "Event Manager"]
 	$boards:=["WrkPass"; "O'Task"; "KnowBase"; "Event Manager"; "Formation"; "Restaurant Manager"]
 	$zone:=["us"; "germany"; "france"; "intl"]  // [0, 1, 2, 3]
 	$users:=ds:C1482.User.all()
@@ -394,7 +396,7 @@ Function generateComments()
 			$comment.user:=$users.at(Random:C100%$users.length)
 			$comment.order:=$task.comments.length
 			$info:=$comment.save()
-			This:C1470.createNotification("comment"; $comment.task.user0$comment.user.fullName+" has added a new comment to this task: "+$comment.task.name+"\" in the $board: \""+$comment.task.boardOfTask.name+"\"")
+			This:C1470.createNotification("comment"; $comment.task.user; $comment.user.fullName+" has added a new comment to this task: "+$comment.task.name+"\" in the $board: \""+$comment.task.boardOfTask.name+"\"")
 			$activity:=ds:C1482.Activity.new()
 			$activity.user:=$comment.user
 			$activity.createdAt:=Current date:C33()

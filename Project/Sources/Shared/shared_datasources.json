@@ -223,6 +223,13 @@
 			"namespace": "shared",
 			"dataType": "string",
 			"initialValue": ""
+		},
+		{
+			"id": "pageLoader",
+			"type": "scalar",
+			"namespace": "shared",
+			"dataType": "string",
+			"initialValue": "signin"
 		}
 	],
 	"Boards": [

@@ -6,11 +6,15 @@
 		<field name="ID" uuid="0474AD4214AF45689ABDE3D39F94D040" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
 		<field name="email" uuid="6872651808F348C8A2E13A8AE9E66DAF" type="10" unique="true" not_null="true" id="2"/>
 		<field name="pictureProfil" uuid="2B8280A75F4A4D449C3ECA57034E091C" type="12" id="3"/>
+		<field name="lastName" uuid="B1AC149964F1EB45BE3BF14329920F27" type="10" limiting_length="255" id="4"/>
+		<field name="role" uuid="A02AECFE786836488E767118DC7D124A" type="10" limiting_length="255" id="5"/>
+		<field name="password" uuid="9B57C2F43BB43C4A8881D71ED976DE0B" type="10" limiting_length="255" id="7"/>
+		<field name="firstName" uuid="74A8B63318DC354B8E1F37AC0FA23D7F" type="10" limiting_length="255" id="8"/>
 		<primary_key field_name="ID" field_uuid="0474AD4214AF45689ABDE3D39F94D040"/>
 		<table_extra>
-			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+			<editor_table_info displayable_fields_count="8">
 				<color red="128" green="51" blue="231" alpha="255"/>
-				<coordinates left="526.40222167969" top="832.01141357422" width="200" height="300"/>
+				<coordinates left="526.40222167969" top="832.01141357422" width="200" height="214"/>
 			</editor_table_info>
 		</table_extra>
 	</table>
@@ -86,7 +90,7 @@
 		<table_extra>
 			<editor_table_info fields_ordering="1" displayable_fields_count="6">
 				<color red="54" green="123" blue="81" alpha="255"/>
-				<coordinates left="0" top="1410.1281738281" width="200" height="300"/>
+				<coordinates left="2.6666641235352" top="1059.4615478516" width="200" height="300"/>
 			</editor_table_info>
 		</table_extra>
 	</table>
@@ -220,7 +224,7 @@
 		<table_extra>
 			<editor_table_info fields_ordering="1" displayable_fields_count="6">
 				<color red="0" green="142" blue="255" alpha="255"/>
-				<coordinates left="153.57678222656" top="2194.6049804688" width="200" height="300"/>
+				<coordinates left="145.57678222656" top="1503.9382324219" width="200" height="300"/>
 			</editor_table_info>
 		</table_extra>
 	</table>
@@ -232,7 +236,7 @@
 		<table_extra>
 			<editor_table_info fields_ordering="1" displayable_fields_count="6">
 				<color red="0" green="0" blue="0" alpha="255"/>
-				<coordinates left="565.10015869141" top="2237.048828125" width="200" height="300"/>
+				<coordinates left="571.76678466797" top="1482.3822021484" width="200" height="300"/>
 			</editor_table_info>
 		</table_extra>
 	</table>
