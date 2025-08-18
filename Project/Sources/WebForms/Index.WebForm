@@ -176,23 +176,6 @@
 						}
 					},
 					{
-						"type": "simple-action",
-						"id": "eSisfuqwhkqfqDKKdjZxGb",
-						"events": [
-							"oninit"
-						],
-						"action": "copy",
-						"actionType": "datasource",
-						"datasource": {
-							"name": "user",
-							"type": "entity",
-							"namespace": "shared",
-							"target": "connectedUser",
-							"targetNamespace": "",
-							"targetType": "entity"
-						}
-					},
-					{
 						"type": "method",
 						"dataclass": "Label",
 						"events": [
@@ -208,6 +191,23 @@
 							"datasource": "labels"
 						},
 						"disabled": false
+					},
+					{
+						"type": "simple-action",
+						"id": "eSisfuqwhkqfqDKKdjZxGb",
+						"events": [
+							"onload"
+						],
+						"action": "copy",
+						"actionType": "datasource",
+						"datasource": {
+							"name": "user",
+							"type": "entity",
+							"namespace": "shared",
+							"target": "connectedUser",
+							"targetNamespace": "",
+							"targetType": "entity"
+						}
 					}
 				],
 				"className": "bg-white h-full w-full px-6",
