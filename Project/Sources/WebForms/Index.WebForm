@@ -196,7 +196,7 @@
 						"type": "simple-action",
 						"id": "eSisfuqwhkqfqDKKdjZxGb",
 						"events": [
-							"onload"
+							"oninit"
 						],
 						"action": "copy",
 						"actionType": "datasource",

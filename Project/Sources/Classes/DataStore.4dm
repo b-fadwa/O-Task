@@ -10,7 +10,6 @@ exposed Function authentify($email : Text; $password : Text) : Boolean
 				End use 
 				return Session:C1714.setPrivileges("Administrator")
 				Web Form:C1735.setMessage("Connection Successfull!")
-				//return $user
 			End if 
 		End if 
 	End if 
