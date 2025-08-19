@@ -14,12 +14,12 @@
 				"conditions": {
 					"id": "bcVQzfZbAe9F1rbe7QTRQz",
 					"type": "privilege",
-					"name": "privilege is not administrator",
+					"name": "No privileges",
 					"value": "Administrator",
 					"valueType": "hardCoded",
 					"path": "shared:pageLoader",
 					"dsType": "string",
-					"op": "neq"
+					"op": "hasnopriv"
 				}
 			},
 			{
@@ -28,12 +28,12 @@
 				"conditions": {
 					"id": "wLBuTaHfJyPvLszvPCB7mX",
 					"type": "privilege",
-					"name": "privilege is administrator",
+					"name": "One privilege at least",
 					"value": "Administrator",
 					"valueType": "hardCoded",
 					"path": "shared:pageLoader",
 					"dsType": "string",
-					"op": "eq"
+					"op": "haspriv"
 				}
 			}
 		]

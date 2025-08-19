@@ -178,18 +178,21 @@ Function createData()
 	This:C1470.generateComments()
 	This:C1470.generateIncidents()
 	
+	// Users
 Function generateUsers()
 	var $user : cs:C1710.UserEntity
 	var $counter : Integer
 	var $fakeUsers : Collection
 	var $avatarBlob : Blob
-	
+	var $roles : Collection:=["Admin"; "ProjectManager"; "Developer"]
 	$fakeUsers:=New collection:C1472()
-	$fakeUsers.push(New object:C1471("lastname"; "Qodly"; "firstname"; "User"; "email"; "qodlyuser@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"); New object:C1471("lastname"; "Devoe"; "firstname"; "Vail"; "email"; "Vail.Devoe@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"))
-	$fakeUsers.push(New object:C1471("lastname"; "test"; "firstname"; "test"; "email"; "test@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"); New object:C1471("lastname"; "Laramée"; "firstname"; "Philip"; "email"; "philipe.laramee@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"))
-	$fakeUsers.push(New object:C1471("lastname"; "Smith"; "firstname"; "John"; "email"; "john.smith@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"); New object:C1471("lastname"; "Johnson"; "firstname"; "Emily"; "email"; "emily.johnson@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"); New object:C1471("lastname"; "Brown"; "firstname"; "Michael"; "email"; "michael.brown@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"); New object:C1471("lastname"; "Davis"; "firstname"; "Olivia"; "email"; "olivia.davis@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"); New object:C1471("lastname"; "Wilson"; "firstname"; "Daniel"; "email"; "daniel.wilson@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"))
-	$fakeUsers.push(New object:C1471("lastname"; "Anderson"; "firstname"; "Sophia"; "email"; "sophia.anderson@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"); New object:C1471("lastname"; "Martinez"; "firstname"; "Liam"; "email"; "liam.martinez@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"); New object:C1471("lastname"; "Garcia"; "firstname"; "Isabella"; "email"; "isabella.garcia@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"); New object:C1471("lastname"; "Thomas"; "firstname"; "James"; "email"; "james.thomas@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"); New object:C1471("lastname"; "Robinson"; "firstname"; "Ava"; "email"; "ava.robinson@4d.com"; "creationDate"; Current date:C33; "role"; "Admin"))
-	
+	$fakeUsers.push(New object:C1471("firstname"; "Qodly"; "lastname"; "User"; "email"; "qodlyuser@4d.com"; "creationDate"; Current date:C33); New object:C1471("firstname"; "Devoe"; "lastname"; "Vail"; "email"; "Vail.Devoe@4d.com"; "creationDate"; Current date:C33))
+	$fakeUsers.push(New object:C1471("firstname"; "test"; "lastname"; "test"; "email"; "test@4d.com"; "creationDate"; Current date:C33); New object:C1471("firstname"; "Laramée"; "lastname"; "Philip"; "email"; "philipe.laramee@4d.com"; "creationDate"; Current date:C33))
+	$fakeUsers.push(New object:C1471("firstname"; "Smith"; "lastname"; "John"; "email"; "john.smith@4d.com"; "creationDate"; Current date:C33); New object:C1471("firstname"; "Johnson"; "lastname"; "Emily"; "email"; "emily.johnson@4d.com"; "creationDate"; Current date:C33))
+	$fakeUsers.push(New object:C1471("firstname"; "Anderson"; "lastname"; "Sophia"; "email"; "sophia.anderson@4d.com"; "creationDate"; Current date:C33); New object:C1471("firstname"; "Martinez"; "lastname"; "Liam"; "email"; "liam.martinez@4d.com"; "creationDate"; Current date:C33))
+	$fakeUsers.push(New object:C1471("firstname"; "Brown"; "lastname"; "Michael"; "email"; "michael.brown@4d.com"; "creationDate"; Current date:C33); New object:C1471("firstname"; "Davis"; "lastname"; "Olivia"; "email"; "olivia.davis@4d.com"; "creationDate"; Current date:C33))
+	$fakeUsers.push(New object:C1471("firstname"; "Garcia"; "lastname"; "Isabella"; "email"; "isabella.garcia@4d.com"; "creationDate"; Current date:C33); New object:C1471("firstname"; "Thomas"; "lastname"; "James"; "email"; "james.thomas@4d.com"; "creationDate"; Current date:C33))
+	$fakeUsers.push(New object:C1471("firstname"; "Robinson"; "lastname"; "Ava"; "email"; "ava.robinson@4d.com"; "creationDate"; Current date:C33); New object:C1471("firstname"; "Wilson"; "lastname"; "Daniel"; "email"; "daniel.wilson@4d.com"; "creationDate"; Current date:C33))
 	For each ($item; $fakeUsers)
 		$status:=HTTP Get:C1157("https://source.unsplash.com/random/4"; $avatarBlob)
 		BLOB TO PICTURE:C682($avatarBlob; $avatar)
@@ -198,8 +201,7 @@ Function generateUsers()
 		$user.lastName:=$item.lastname
 		$user.email:=$item.email
 		$user.password:=Generate password hash:C1533("123456")
-		$user.role:=$item.role
-		//$user.pictureProfil:=$avatar
+		$user.role:=$roles.at(Random:C100%$roles.length)
 		$user.save()
 	End for each 
 	

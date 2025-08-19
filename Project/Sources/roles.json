@@ -44,6 +44,16 @@
 				]
 			},
 			{
+				"applyTo": "ds.signOut",
+				"type": "method",
+				"execute": [
+					"guest"
+				],
+				"promote": [
+					"guest"
+				]
+			},
+			{
 				"applyTo": "Board.private",
 				"type": "attribute",
 				"read": [
@@ -266,9 +276,7 @@
 		{
 			"id": "eR54mVseaoMSCqbwiWBrH5",
 			"privilege": "chooseUserBoard",
-			"includes": [
-				"privateBoardOrNot"
-			]
+			"includes": []
 		},
 		{
 			"id": "td544bb73PLvgMLc8DZTtg",
