@@ -297,7 +297,8 @@
 					"paddingRight": "0px",
 					"paddingBottom": "0px",
 					"paddingTop": "0px",
-					"paddingLeft": "0px"
+					"paddingLeft": "0px",
+					"height": "100%"
 				}
 			},
 			"displayName": "Page",
@@ -849,9 +850,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Track :",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Track :",
 				"deletable": true,
 				"style": {
 					"paddingRight": "0px",
@@ -1134,10 +1136,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Label",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": "Label"
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -1172,7 +1175,8 @@
 				"moveable": false,
 				"readonly": false,
 				"revealPassword": true,
-				"eyePosition": "right"
+				"eyePosition": "right",
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -1697,10 +1701,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Label",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": "Label"
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -1764,7 +1769,8 @@
 				"serverSideRef": "",
 				"classNames": [],
 				"revealPassword": true,
-				"eyePosition": "right"
+				"eyePosition": "right",
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -2051,10 +2057,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Label",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": "Label"
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -2423,10 +2430,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Label",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": "Label"
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -2461,7 +2469,8 @@
 					"fontSize": "12px"
 				},
 				"revealPassword": true,
-				"eyePosition": "right"
+				"eyePosition": "right",
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -2856,9 +2865,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Name",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Name",
 				"deletable": true
 			},
 			"displayName": "Label",
@@ -2893,7 +2903,8 @@
 				"readonly": false,
 				"serverSideRef": "taskName",
 				"revealPassword": true,
-				"eyePosition": "right"
+				"eyePosition": "right",
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {
@@ -3602,9 +3613,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Name",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Name",
 				"deletable": true
 			},
 			"displayName": "Label",
@@ -3663,7 +3675,8 @@
 				"serverSideRef": "tagName",
 				"classNames": [],
 				"revealPassword": true,
-				"eyePosition": "right"
+				"eyePosition": "right",
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {
@@ -4202,9 +4215,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Task Priority:",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Task Priority:",
 				"style": {
 					"fontSize": "14px"
 				},

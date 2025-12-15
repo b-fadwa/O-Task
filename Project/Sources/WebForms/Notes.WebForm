@@ -234,10 +234,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Label",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": "Label"
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -260,7 +261,8 @@
 				"placeholder": "",
 				"readonly": false,
 				"revealPassword": true,
-				"eyePosition": "right"
+				"eyePosition": "right",
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -656,10 +658,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Label",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": "Label"
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -762,7 +765,8 @@
 				"readonly": false,
 				"serverSideRef": "searchNote",
 				"revealPassword": true,
-				"eyePosition": "right"
+				"eyePosition": "right",
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {},

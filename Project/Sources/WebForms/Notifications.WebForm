@@ -130,7 +130,8 @@
 					"paddingTop": "0px",
 					"paddingBottom": "0px",
 					"borderWidth": "1px",
-					"borderColor": "#CCCCCC"
+					"borderColor": "#CCCCCC",
+					"height": "100%"
 				}
 			},
 			"displayName": "Page",

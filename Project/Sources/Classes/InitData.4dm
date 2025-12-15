@@ -403,7 +403,7 @@ Function generateComments()
 			$activity.user:=$comment.user
 			$activity.createdAt:=Current date:C33()
 			$activity.creationTime:=Current time:C178()
-			$activity.content:="commented on this task: "+$comment.content
+			$activity.content:="commented on this task: "+String:C10($comment.content)
 			$activity.subject:="task"
 			$activity.problem:=Null:C1517
 			$activity.task:=$task

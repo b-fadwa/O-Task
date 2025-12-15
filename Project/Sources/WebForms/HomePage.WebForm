@@ -91,6 +91,41 @@
 						"events": [
 							"oninit"
 						],
+						"id": "6q9wJ3ZkBmQY9qx7zrs4zd",
+						"method": "ds.authentify",
+						"params": [
+							{
+								"name": "email",
+								"type": "Text",
+								"datasource": "",
+								"id": "tSosV93qL5pgpCZ5935DXH",
+								"isHardCoded": true,
+								"hardCodedType": "string",
+								"hardCodedValue": ""
+							},
+							{
+								"name": "password",
+								"type": "Text",
+								"datasource": "",
+								"id": "8fgZ9fBuS1TsAAwHU1MuGy",
+								"isHardCoded": true,
+								"hardCodedType": "string",
+								"hardCodedValue": ""
+							}
+						],
+						"datasource": "",
+						"allowedOnHTTPGET": false,
+						"returns": {
+							"name": "result",
+							"type": "Boolean"
+						}
+					},
+					{
+						"type": "method",
+						"dataclass": "DataStore",
+						"events": [
+							"oninit"
+						],
 						"id": "t3ANhzcoJuMb7kBCzyVSkh",
 						"method": "ds.getManifestObject",
 						"params": [],
@@ -130,7 +165,8 @@
 					"paddingLeft": "0px",
 					"backgroundColor": "#F5F5F5",
 					"display": "flex",
-					"flexDirection": "column"
+					"flexDirection": "column",
+					"height": "100%"
 				}
 			},
 			"displayName": "Page",

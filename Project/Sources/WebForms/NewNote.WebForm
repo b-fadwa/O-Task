@@ -551,10 +551,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Label",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": "Label"
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -589,7 +590,8 @@
 				"readonly": false,
 				"datasource": "Notes:note.title",
 				"revealPassword": true,
-				"eyePosition": "right"
+				"eyePosition": "right",
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -683,10 +685,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Label",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": "Label"
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -723,7 +726,8 @@
 				"serverSideRef": "noteContent",
 				"classNames": [],
 				"revealPassword": true,
-				"eyePosition": "right"
+				"eyePosition": "right",
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {

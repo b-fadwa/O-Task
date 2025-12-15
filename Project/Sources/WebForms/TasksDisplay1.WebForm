@@ -1790,9 +1790,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Name",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Name",
 				"deletable": true
 			},
 			"displayName": "Label",
@@ -1857,7 +1858,8 @@
 				"moveable": false,
 				"readonly": false,
 				"revealPassword": true,
-				"eyePosition": "right"
+				"eyePosition": "right",
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {
@@ -4839,10 +4841,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Label",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": "Label"
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -4923,7 +4926,8 @@
 				"readonly": false,
 				"revealPassword": true,
 				"eyePosition": "right",
-				"intervals": []
+				"intervals": [],
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -5577,10 +5581,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": ""
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -6437,7 +6442,7 @@
 			"props": {
 				"gridProps": {
 					"styleboxWidth": 350,
-					"styleboxHeight": 696,
+					"styleboxHeight": 681,
 					"styleboxPercentWidth": "",
 					"enableMosaic": false
 				},
@@ -7765,10 +7770,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": ""
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -10043,10 +10049,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": ""
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -11870,10 +11877,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Label",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": "Label"
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -11940,7 +11948,8 @@
 				"readonly": false,
 				"revealPassword": true,
 				"eyePosition": "right",
-				"intervals": []
+				"intervals": [],
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -12594,10 +12603,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": ""
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -13402,9 +13412,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Name",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Name",
 				"deletable": true
 			},
 			"displayName": "Label",
@@ -13469,7 +13480,8 @@
 				"readonly": false,
 				"revealPassword": true,
 				"eyePosition": "right",
-				"intervals": []
+				"intervals": [],
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {

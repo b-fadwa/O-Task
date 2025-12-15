@@ -1,13 +1,35 @@
 {
 	"forceLogin": true,
+	"restrictedByDefault": false,
 	"permissions": {
 		"allowed": [
+			{
+				"applyTo": "Task",
+				"type": "dataclass",
+				"read": [
+					"guestPromoted",
+					"Task"
+				],
+				"create": [
+					"guestPromoted",
+					"Task"
+				],
+				"drop": [
+					"guestPromoted"
+				]
+			},
 			{
 				"applyTo": "User",
 				"type": "dataclass",
 				"read": [
-					"guest",
+					"guestPromoted",
 					"currentUser"
+				],
+				"create": [
+					"guestPromoted"
+				],
+				"drop": [
+					"guestPromoted"
 				],
 				"update": [
 					"currentUser"
@@ -17,10 +39,141 @@
 				]
 			},
 			{
-				"applyTo": "User.role",
-				"type": "attribute",
+				"applyTo": "Board",
+				"type": "dataclass",
+				"read": [
+					"guestPromoted",
+					"Board"
+				],
+				"create": [
+					"guestPromoted",
+					"Board"
+				],
 				"update": [
-					"guest"
+					"guestPromoted",
+					"Board"
+				],
+				"drop": [
+					"guestPromoted"
+				],
+				"execute": [
+					"guestPromoted",
+					"Board"
+				]
+			},
+			{
+				"applyTo": "Comment",
+				"type": "dataclass",
+				"read": [
+					"guestPromoted",
+					"Task"
+				],
+				"create": [
+					"guestPromoted"
+				],
+				"drop": [
+					"guestPromoted"
+				]
+			},
+			{
+				"applyTo": "List",
+				"type": "dataclass",
+				"read": [
+					"guestPromoted",
+					"List"
+				],
+				"create": [
+					"guestPromoted",
+					"List"
+				],
+				"drop": [
+					"guestPromoted"
+				],
+				"execute": [
+					"List"
+				]
+			},
+			{
+				"applyTo": "Incident",
+				"type": "dataclass",
+				"read": [
+					"guestPromoted",
+					"Incident"
+				],
+				"create": [
+					"guestPromoted",
+					"Incident"
+				],
+				"drop": [
+					"guestPromoted"
+				],
+				"execute": [
+					"Incident"
+				]
+			},
+			{
+				"applyTo": "Board.private",
+				"type": "attribute",
+				"read": [
+					"guestPromoted",
+					"boardUserDeveloper",
+					"currentUser"
+				],
+				"create": [
+					"guestPromoted",
+					"boardUserDeveloper",
+					"privateBoardOrNot",
+					"currentUser"
+				],
+				"update": [
+					"guestPromoted",
+					"boardUserDeveloper",
+					"privateBoardOrNot",
+					"currentUser"
+				],
+				"drop": [
+					"guestPromoted"
+				]
+			},
+			{
+				"applyTo": "Board.user",
+				"type": "attribute",
+				"read": [
+					"guestPromoted",
+					"boardUserDeveloper",
+					"currentUser"
+				],
+				"create": [
+					"guestPromoted",
+					"boardUserDeveloper",
+					"currentUser",
+					"chooseUserBoard"
+				],
+				"update": [
+					"guestPromoted",
+					"boardUserDeveloper",
+					"currentUser",
+					"chooseUserBoard"
+				],
+				"drop": [
+					"guestPromoted"
+				]
+			},
+			{
+				"applyTo": "Comment.content",
+				"type": "attribute",
+				"read": [
+					"guestPromoted",
+					"Task"
+				],
+				"create": [
+					"guestPromoted"
+				],
+				"update": [
+					"guestPromoted"
+				],
+				"drop": [
+					"guestPromoted"
 				]
 			},
 			{
@@ -44,91 +197,13 @@
 				]
 			},
 			{
-				"applyTo": "ds.signOut",
+				"applyTo": "ds.generateData",
 				"type": "method",
 				"execute": [
 					"guest"
 				],
 				"promote": [
 					"guest"
-				]
-			},
-			{
-				"applyTo": "Board.private",
-				"type": "attribute",
-				"read": [
-					"boardUserDeveloper",
-					"currentUser"
-				],
-				"create": [
-					"boardUserDeveloper",
-					"privateBoardOrNot",
-					"currentUser"
-				],
-				"update": [
-					"boardUserDeveloper",
-					"privateBoardOrNot",
-					"currentUser"
-				]
-			},
-			{
-				"applyTo": "Board.user",
-				"type": "attribute",
-				"read": [
-					"boardUserDeveloper",
-					"currentUser"
-				],
-				"create": [
-					"boardUserDeveloper",
-					"currentUser",
-					"chooseUserBoard"
-				],
-				"update": [
-					"boardUserDeveloper",
-					"currentUser",
-					"chooseUserBoard"
-				]
-			},
-			{
-				"applyTo": "Incident",
-				"type": "dataclass",
-				"read": [
-					"Incident"
-				],
-				"create": [
-					"Incident"
-				],
-				"execute": [
-					"Incident"
-				]
-			},
-			{
-				"applyTo": "List",
-				"type": "dataclass",
-				"read": [
-					"List"
-				],
-				"create": [
-					"List"
-				],
-				"execute": [
-					"List"
-				]
-			},
-			{
-				"applyTo": "Board",
-				"type": "dataclass",
-				"read": [
-					"Board"
-				],
-				"create": [
-					"Board"
-				],
-				"update": [
-					"Board"
-				],
-				"execute": [
-					"Board"
 				]
 			},
 			{
@@ -176,16 +251,6 @@
 				]
 			},
 			{
-				"applyTo": "Task",
-				"type": "dataclass",
-				"read": [
-					"Task"
-				],
-				"create": [
-					"Task"
-				]
-			},
-			{
 				"applyTo": "Task.tasksPriority",
 				"type": "method",
 				"execute": [
@@ -205,24 +270,15 @@
 				"execute": [
 					"Task"
 				]
-			},
-			{
-				"applyTo": "Comment",
-				"type": "dataclass",
-				"read": [
-					"Task"
-				]
-			},
-			{
-				"applyTo": "Comment.content",
-				"type": "attribute",
-				"read": [
-					"Task"
-				]
 			}
 		]
 	},
 	"privileges": [
+		{
+			"id": "6JKJtWAunWD5i7LVDwAj5m",
+			"privilege": "guestPromoted",
+			"includes": []
+		},
 		{
 			"id": "bmBSA3ZpVqAyAD4ERgkoPk",
 			"privilege": "boardUserDeveloper",

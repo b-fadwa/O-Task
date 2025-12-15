@@ -462,7 +462,8 @@
 					"paddingTop": "0px",
 					"paddingLeft": "0px",
 					"flexDirection": "column",
-					"backgroundColor": "transparent"
+					"backgroundColor": "transparent",
+					"height": "100%"
 				}
 			},
 			"displayName": "Page",
@@ -702,9 +703,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Zone :",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Zone :",
 				"deletable": true,
 				"style": {
 					"minWidth": "fit-content",
@@ -847,10 +849,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Label",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": "Label"
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -910,7 +913,8 @@
 				"moveable": false,
 				"readonly": false,
 				"revealPassword": true,
-				"eyePosition": "right"
+				"eyePosition": "right",
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -4302,9 +4306,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Name",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Name",
 				"deletable": true
 			},
 			"displayName": "Label",
@@ -4358,7 +4363,8 @@
 				"serverSideRef": "boardName",
 				"classNames": [],
 				"revealPassword": true,
-				"eyePosition": "right"
+				"eyePosition": "right",
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {
@@ -4472,9 +4478,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Description&nbsp;",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Description&nbsp;",
 				"deletable": true
 			},
 			"displayName": "Label",
@@ -4507,7 +4514,8 @@
 				"moveable": false,
 				"readonly": false,
 				"revealPassword": true,
-				"eyePosition": "right"
+				"eyePosition": "right",
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -4599,10 +4607,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Private",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
 				"htmlfor": "WoLFJLuVTT",
-				"text": "Private",
 				"deletable": true,
 				"style": {
 					"paddingRight": "0px",
@@ -4887,10 +4896,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Label",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": "Label"
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -5386,9 +5396,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Name",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Name",
 				"deletable": true
 			},
 			"displayName": "Label",
@@ -5442,7 +5453,8 @@
 				"serverSideRef": "boardName",
 				"classNames": [],
 				"revealPassword": true,
-				"eyePosition": "right"
+				"eyePosition": "right",
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {
@@ -5556,9 +5568,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Description&nbsp;",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Description&nbsp;",
 				"deletable": true
 			},
 			"displayName": "Label",
@@ -5591,7 +5604,8 @@
 				"moveable": false,
 				"readonly": false,
 				"revealPassword": true,
-				"eyePosition": "right"
+				"eyePosition": "right",
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -5678,10 +5692,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Private",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
 				"htmlfor": "WoLFJLuVTT",
-				"text": "Private",
 				"deletable": true,
 				"style": {
 					"paddingRight": "0px",
@@ -5946,10 +5961,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Label",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": "Label"
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
