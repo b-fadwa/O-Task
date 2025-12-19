@@ -93,7 +93,8 @@
 					"paddingTop": "6px",
 					"paddingLeft": "0px",
 					"gap": "6px",
-					"backgroundColor": "#EEF0F4"
+					"backgroundColor": "#EEF0F4",
+					"height": "100%"
 				}
 			},
 			"displayName": "Page",

@@ -79,7 +79,8 @@
 					"paddingRight": "0px",
 					"paddingBottom": "0px",
 					"paddingTop": "0px",
-					"paddingLeft": "0px"
+					"paddingLeft": "0px",
+					"height": "100%"
 				}
 			},
 			"displayName": "Page",
@@ -561,10 +562,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Label",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": "Label"
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -601,7 +603,8 @@
 				"dataType": "string",
 				"revealPassword": true,
 				"eyePosition": "right",
-				"intervals": []
+				"intervals": [],
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {
@@ -830,10 +833,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Label",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": "Label"
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -868,7 +872,8 @@
 					"borderStyle": "none"
 				},
 				"revealPassword": true,
-				"eyePosition": "right"
+				"eyePosition": "right",
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -1054,7 +1059,7 @@
 			},
 			"displayName": "Stylebox",
 			"custom": {
-				"contentHeight": 37
+				"contentHeight": 38
 			},
 			"parent": "yrpHLX1AP0",
 			"hidden": false,
@@ -1296,9 +1301,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Status :",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Status :",
 				"style": {
 					"fontSize": "14px"
 				},
@@ -1390,9 +1396,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Severity :",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Severity :",
 				"style": {
 					"fontSize": "14px"
 				},
@@ -1484,9 +1491,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Reproducible :",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Reproducible :",
 				"style": {
 					"fontSize": "14px"
 				},

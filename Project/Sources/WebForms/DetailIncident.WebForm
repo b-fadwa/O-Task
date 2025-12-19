@@ -279,7 +279,8 @@
 					"paddingBottom": "6px",
 					"paddingTop": "0px",
 					"paddingLeft": "0px",
-					"backgroundColor": "#EEF0F4"
+					"backgroundColor": "#EEF0F4",
+					"height": "100%"
 				}
 			},
 			"displayName": "Page",

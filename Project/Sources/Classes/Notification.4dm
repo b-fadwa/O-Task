@@ -1,6 +1,6 @@
 Class extends DataClass
 
-exposed Function generateNotification($typeNotif : Text; $user : cs:C1710.UserEntity; $user2 : cs:C1710.UserEntity; $task : cs:C1710.TaskEntity)  // $user2 represents the $user who has created the $notification
+exposed Function generateNotification($typeNotif : Text; $user : cs:C1710.UserEntity; $user2 : cs:C1710.UserEntity; $task : cs:C1710.TaskEntity)
 	var $notification : cs:C1710.NotificationEntity
 	var $info : Object
 	$notification:=This:C1470.new()
@@ -71,7 +71,7 @@ exposed Function tasksDeadlineToday($user : cs:C1710.UserEntity)
 		$mailer.sendMail("Tasks deadline today!"; $subject; $notification.content; ds:C1482.User.getCurrentUser().email)
 	End if 
 	
-exposed Function deleteTasksDeadlineToday($user : cs:C1710.UserEntity)  // to be used in the function "this.checkEndDateTask(task)"
+exposed Function deleteTasksDeadlineToday($user : cs:C1710.UserEntity)
 	var $notifs : cs:C1710.NotificationSelection
 	$notifs:=This:C1470.query("user.ID = :1 AND type = :2 AND createdAt = :3"; $user.ID; "tasksDeadlineToday"; Current date:C33())
 	If ($notifs.length#0)

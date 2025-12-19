@@ -83,7 +83,8 @@
 					"paddingTop": "0px",
 					"paddingLeft": "0px",
 					"gap": "6px",
-					"backgroundColor": "#EEF0F4"
+					"backgroundColor": "#EEF0F4",
+					"height": "100%"
 				}
 			},
 			"displayName": "Page",
@@ -129,7 +130,8 @@
 					"paddingRight": "3px",
 					"paddingBottom": "3px",
 					"paddingTop": "0px",
-					"paddingLeft": "0px"
+					"paddingLeft": "0px",
+					"height": "100%"
 				},
 				"classNames": [
 					"flexGrow1"
@@ -734,10 +736,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": ""
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},

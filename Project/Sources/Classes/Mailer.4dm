@@ -1,6 +1,6 @@
 Class constructor
 	
-/** In order to use the mailing class, you'll have to create an account with your $email in the sendgrid $email api , store your credentials in an env file somewhere in your project structure*\
+/** In order to use the mailing class, you'll have to create an account with your email in the sendgrid $email api , store your credentials in an env file somewhere in your project structure*\
 */
 	
 	var $server : Object
@@ -18,7 +18,7 @@ Function sendMail($subject : Text; $title : Text; $content : Text; $userEmail : 
 	$status:=This:C1470.transporter.checkConnection()
 	If ($status.success)
 		$email:=New object:C1471()
-		$email.from:=""  // Add the $email by which the API was created
+		$email.from:=""  // Add the email by which the API was created
 		$email.to:=$userEmail
 		$email.subject:=$subject
 		$email.htmlBody:=cs:C1710.ContentHTML.me.mail($title; $content)

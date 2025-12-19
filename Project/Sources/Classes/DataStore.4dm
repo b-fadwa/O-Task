@@ -4,6 +4,9 @@ exposed Function authentify($email : Text; $password : Text) : Boolean
 	var $adminPrivileges : Collection:=["Tag"; "Incident"; "List"; "Board"; "currentUser"; "Task"; "chooseUserBoard"]
 	var $pmPrivileges : Collection:=["privateBoardOrNot"; "Marketing"; "Tag"; "Incident"; "List"; "Board"; "currentUser"; "Task"]
 	var $developerPrivileges : Collection:=["boardUserDeveloper"; "Engineering"; "Tag"; "Incident"; "List"; "Board"; "currentUser"; "Task"]
+	If (($email="") && ($password=""))
+		return Session:C1714.setPrivileges(["guest"; "guestPromoted"])
+	End if 
 	If ($email#"")
 		var $user : cs:C1710.UserEntity:=ds:C1482.User.query("email = :1"; $email).first()
 		If ($user#Null:C1517)
@@ -27,12 +30,6 @@ exposed Function authentify($email : Text; $password : Text) : Boolean
 			Web Form:C1735.setError("Connection Failed!")
 		End if 
 	End if 
-	
-exposed Function signOut()
-	Session:C1714.clearPrivileges()
-	Use (Session:C1714.storage)
-		Session:C1714.storage.payLoad:=New shared object:C1526()
-	End use 
 	
 exposed Function setCss($serverRef : Text; $cssClass : Text)
 	var $component : 4D:C1709.WebFormItem

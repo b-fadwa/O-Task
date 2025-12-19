@@ -37,56 +37,48 @@
 				"name": "dropDownChild",
 				"content": "self {\n\tdisplay: none;\n}",
 				"parentId": null,
-				"id": "QQZCZKssSI9SqRBWfu_Lk",
-				"scope": "local"
+				"id": "QQZCZKssSI9SqRBWfu_Lk"
 			},
 			{
 				"name": "dropDownParent",
 				"content": "self { position: relative; display: inline-block; }\nself:hover .dropDownChild {display: block;\n}",
 				"parentId": null,
-				"id": "vlCKDGX0tqJVQ23_p2-HU",
-				"scope": "local"
+				"id": "vlCKDGX0tqJVQ23_p2-HU"
 			},
 			{
 				"name": "labelsCSS",
 				"content": "self {\n\theight: 100% !important;\n}\nself .FdVirtualGrid .innerScrollContainer .selected {\n\tbackground-color: transparent;\n}\nself .FdVirtualGrid .innerScrollContainer .selected .selectedLabel {\n\tbackground-color: #f9e1f0ff !important;\n\tcolor: #B02C86 !important;\n\tfont-weight: 500;\n\tfont-size: 14px !important;\n}\n\nself .FdVirtualGrid .innerScrollContainer .items-center:hover {\n\tbackground-color: transparent;\n}\n\nself .FdVirtualGrid .innerScrollContainer .items-center .selectedLabel:hover {\n\tbackground-color: transparent;\n}",
 				"parentId": null,
-				"id": "J2AtTvckZxNivzj-2gVSM",
-				"scope": "local"
+				"id": "J2AtTvckZxNivzj-2gVSM"
 			},
 			{
 				"name": "selectedLabel",
 				"content": "self {\n\tbackground-color: white;\n\tcolor: #4F598E;\n\tfont-size: 12px;\n}",
 				"parentId": null,
-				"id": "zDS29bDFnMWnxolpnxVbW",
-				"scope": "local"
+				"id": "zDS29bDFnMWnxolpnxVbW"
 			},
 			{
 				"name": "selectedItem",
 				"content": "self {\n\n}",
 				"parentId": null,
-				"id": "VQBst9LItyxLm2NhHrmGO",
-				"scope": "local"
+				"id": "VQBst9LItyxLm2NhHrmGO"
 			},
 			{
 				"name": "matrixCSS",
 				"content": "self{\n\theight: 100% !important;\n}\nself .FdVirtualGrid .innerScrollContainer .selected {\n\tbackground-color: transparent;\n}\nself .FdVirtualGrid .innerScrollContainer .selected .selectedItem {\n\tbackground-color: transparent;\n}\n\nself .FdVirtualGrid .innerScrollContainer .items-center:hover {\n\tbackground-color: transparent;\n}\n\nself .FdVirtualGrid .innerScrollContainer .items-center .selectedItem:hover {\n\tbackground-color: transparent;\n}",
 				"parentId": null,
-				"id": "Rg81Il1xTOssaOlc7V05C",
-				"scope": "local"
+				"id": "Rg81Il1xTOssaOlc7V05C"
 			},
 			{
 				"name": "defaultLabel",
 				"content": "self:has(p span[title=\"true\"]) {\n\tdisplay: none !important;\n}",
 				"parentId": null,
-				"id": "JRT0b2rp68P5huDLVresD",
-				"scope": "local"
+				"id": "JRT0b2rp68P5huDLVresD"
 			},
 			{
 				"name": "select",
 				"content": "self {\n\tcolor: #B02C86 !important;\n\tbackground-color: #f9e1f0ff !important;\n\tfont-size: 14px !important;\n\tfont-weight: 500;\n}",
 				"parentId": null,
-				"scope": "local",
 				"id": "k4y0xxhAkv7mFJCsqGCG4"
 			}
 		],
@@ -748,7 +740,8 @@
 			"hidden": false,
 			"nodes": [
 				"WL1qcOe6se",
-				"ZzFthdtaas"
+				"ZzFthdtaas",
+				"ZMPWZo8IsR"
 			],
 			"linkedNodes": {}
 		},
@@ -4112,9 +4105,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Name",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Name",
 				"deletable": true
 			},
 			"displayName": "Label",
@@ -4147,7 +4141,8 @@
 				"moveable": false,
 				"readonly": false,
 				"revealPassword": true,
-				"eyePosition": "right"
+				"eyePosition": "right",
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -5418,10 +5413,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Label",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": "Label"
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -5454,7 +5450,8 @@
 				"moveable": false,
 				"readonly": false,
 				"revealPassword": true,
-				"eyePosition": "right"
+				"eyePosition": "right",
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -6180,6 +6177,110 @@
 				"WClSsFJheO",
 				"acKH5UWhLz"
 			],
+			"linkedNodes": {}
+		},
+		"ZMPWZo8IsR": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "gHUBpMd5Tw",
+			"hidden": false,
+			"nodes": [
+				"PRVfjJQIp6"
+			],
+			"linkedNodes": {}
+		},
+		"PRVfjJQIp6": {
+			"type": {
+				"resolvedName": "Button"
+			},
+			"isCanvas": false,
+			"props": {
+				"text": "Log out",
+				"classNames": [],
+				"events": [
+					{
+						"type": "qodly-pro-action",
+						"id": "odZ3wGDGyidajtDa9ji6RH",
+						"events": [
+							"onclick"
+						],
+						"actionType": "auth",
+						"action": "logout"
+					}
+				],
+				"iconPosition": "left",
+				"style": {
+					"display": "flex",
+					"width": "100%",
+					"marginLeft": "0px",
+					"marginRight": "0px",
+					"textTransform": "capitalize",
+					"paddingLeft": "12px",
+					"paddingRight": "6px",
+					"marginBottom": "0px",
+					"marginTop": "0px",
+					"height": "35px",
+					"alignItems": "center",
+					"borderRadius": "0px",
+					"justifyContent": "flex-start",
+					"color": "#4F598E",
+					"backgroundColor": "#ffffffff",
+					"fontSize": "12px"
+				},
+				"serverSideRef": ""
+			},
+			"displayName": "Button",
+			"custom": {
+				"states:qTWHUMvivzR8nSruXQSx5G": {
+					"classNames": [],
+					"style": {
+						"backgroundColor": "#ffffffff",
+						"color": "#4F598E",
+						"fontSize": "12px",
+						"fontWeight": "500"
+					}
+				}
+			},
+			"parent": "ZMPWZo8IsR",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"icon": "ZOxH8AQNEE"
+			}
+		},
+		"ZOxH8AQNEE": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"icon": "fa-solid fa-arrow-right-from-bracket",
+				"style": {
+					"width": "24px",
+					"marginRight": "6px",
+					"marginBottom": "0px",
+					"marginTop": "0px",
+					"marginLeft": "0px",
+					"display": "flex",
+					"justifyContent": "center",
+					"alignItems": "center"
+				}
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "PRVfjJQIp6",
+			"hidden": false,
+			"nodes": [],
 			"linkedNodes": {}
 		}
 	}

@@ -509,7 +509,8 @@
 					"paddingBottom": "6px",
 					"paddingTop": "0px",
 					"paddingLeft": "0px",
-					"cursor": "auto"
+					"cursor": "auto",
+					"height": "100%"
 				}
 			},
 			"displayName": "Page",
@@ -2378,9 +2379,10 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Track :",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"text": "Track :",
 				"deletable": true,
 				"style": {
 					"paddingRight": "0px",

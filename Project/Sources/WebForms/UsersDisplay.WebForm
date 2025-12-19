@@ -83,7 +83,8 @@
 					"paddingLeft": "0px",
 					"display": "flex",
 					"flexDirection": "column",
-					"paddingBottom": "0px"
+					"paddingBottom": "0px",
+					"height": "100%"
 				}
 			},
 			"displayName": "Page",
@@ -103,10 +104,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "Label",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": "Label"
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -129,7 +131,8 @@
 				"placeholder": "",
 				"readonly": false,
 				"revealPassword": true,
-				"eyePosition": "right"
+				"eyePosition": "right",
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {},
@@ -332,10 +335,11 @@
 			},
 			"isCanvas": false,
 			"props": {
+				"text": "UserSearch",
+				"classNames": [],
 				"events": [],
 				"moveable": false,
-				"deletable": true,
-				"text": "UserSearch"
+				"deletable": true
 			},
 			"displayName": "Label",
 			"custom": {},
@@ -391,7 +395,8 @@
 				"moveable": false,
 				"readonly": false,
 				"revealPassword": true,
-				"eyePosition": "right"
+				"eyePosition": "right",
+				"twentyFourHours": true
 			},
 			"displayName": "Input",
 			"custom": {},

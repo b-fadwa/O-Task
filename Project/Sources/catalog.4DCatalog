@@ -567,11 +567,6 @@
 			<table_ref uuid="4D3E67C7471C471BBF76FE89334A8F09" name="Board"/>
 		</field_ref>
 	</index>
-	<index kind="regular" unique_keys="true" uuid="3738A277720D0E42A0CA176006841CD2" type="1">
-		<field_ref uuid="0474AD4214AF45689ABDE3D39F94D040" name="ID">
-			<table_ref uuid="E849CBCE423E4FF69306AC99E9AC51E8" name="User"/>
-		</field_ref>
-	</index>
 	<index kind="regular" unique_keys="true" uuid="4AEE5C243EF0A344B0AD719CBF6FBA18" type="1">
 		<field_ref uuid="3915943E91D14AC0BF662EAE441C7756" name="ID">
 			<table_ref uuid="51BCF66083EC427391523F7D39C44553" name="Notification"/>
@@ -579,6 +574,11 @@
 	</index>
 	<index kind="regular" unique_keys="true" uuid="5126E381E3777B42A3B12BF698B53E4C" type="1">
 		<field_ref uuid="6872651808F348C8A2E13A8AE9E66DAF" name="email">
+			<table_ref uuid="E849CBCE423E4FF69306AC99E9AC51E8" name="User"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="6054CCC670AB46869C955A94DE844539" type="1">
+		<field_ref uuid="0474AD4214AF45689ABDE3D39F94D040" name="ID">
 			<table_ref uuid="E849CBCE423E4FF69306AC99E9AC51E8" name="User"/>
 		</field_ref>
 	</index>
