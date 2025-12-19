@@ -32,7 +32,43 @@
 			"isCanvas": true,
 			"props": {
 				"classNames": [],
-				"events": [],
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "DataStore",
+						"events": [
+							"oninit"
+						],
+						"id": "jV9C38Sy7Z5pKbGHUSChkL",
+						"method": "ds.authentify",
+						"params": [
+							{
+								"name": "email",
+								"type": "Text",
+								"datasource": "",
+								"id": "4YwLv1XCTRxvmpB9vEE16s",
+								"isHardCoded": true,
+								"hardCodedType": "string",
+								"hardCodedValue": ""
+							},
+							{
+								"name": "password",
+								"type": "Text",
+								"datasource": "",
+								"id": "cTBg9gnPawnue7cUoyiZYG",
+								"isHardCoded": true,
+								"hardCodedType": "string",
+								"hardCodedValue": ""
+							}
+						],
+						"datasource": "",
+						"allowedOnHTTPGET": false,
+						"returns": {
+							"name": "result",
+							"type": "Boolean"
+						}
+					}
+				],
 				"airyMode": true,
 				"className": "bg-white h-full w-full px-6",
 				"style": {

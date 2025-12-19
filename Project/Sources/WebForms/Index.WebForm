@@ -6235,16 +6235,16 @@
 					"backgroundColor": "#ffffffff",
 					"fontSize": "12px"
 				},
-				"serverSideRef": "allUsers"
+				"serverSideRef": ""
 			},
 			"displayName": "Button",
 			"custom": {
 				"states:qTWHUMvivzR8nSruXQSx5G": {
 					"classNames": [],
 					"style": {
-						"backgroundColor": "#f9e1f0ff",
-						"color": "#B02C86",
-						"fontSize": "14px",
+						"backgroundColor": "#ffffffff",
+						"color": "#4F598E",
+						"fontSize": "12px",
 						"fontWeight": "500"
 					}
 				}
