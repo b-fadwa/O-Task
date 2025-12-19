@@ -31,12 +31,6 @@ exposed Function authentify($email : Text; $password : Text) : Boolean
 		End if 
 	End if 
 	
-exposed Function signOut()
-	Session:C1714.clearPrivileges()
-	Use (Session:C1714.storage)
-		Session:C1714.storage.payLoad:=New shared object:C1526()
-	End use 
-	
 exposed Function setCss($serverRef : Text; $cssClass : Text)
 	var $component : 4D:C1709.WebFormItem
 	$component:=Web Form:C1735[$serverRef]

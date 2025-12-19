@@ -1,84 +1,49 @@
 Class extends DataClass
 
-exposed function verifyIfExist($name : text; $board : cs.BoardEntity)
-	// provisional function: waiting this bug fixed about states causing refreshing page https://git-ps.wakanda.io/4d/web-studio/docs/-/issues/3027
-	var $entity: cs.ListEntity
-	$entity := this.query("name = :1 AND board.ID = :2"; $name; $board.ID).first()
-	if (($name = null) || ($name = ""))
-		ds.setCss("saveListAfterEditing"; "hidden")
-		ds.setCss("createList"; "hidden")
-	else
-		if ($entity # null)
-			web Form.setError("List already existed!")
-			ds.setCss("saveListAfterEditing"; "hidden")
-			ds.setCss("createList"; "hidden")
-		else
-			ds.removeCss("saveListAfterEditing"; "hidden")
-			ds.removeCss("createList"; "hidden")
-		end if
-	end if
-
-exposed function taskList($task : cs.TaskEntity) ->$list : cs.ListEntity
-	$list := this.query("tasks.ID = :1"; $task.ID).first()
-
-exposed function reloadTaskByList($board : cs.BoardEntity)->$selection : cs.ListSelection
-	$selection := this.query("board.ID = :1 AND name # :2"; $board.ID; "Closed")
-
-exposed function createBoardList($board : cs.BoardEntity; $list : cs.ListEntity)->$selection : cs.ListSelection
-	var $info: object
-	$info := $list.save()
-	web Form.setMessage("List Created Successfully!")
-	$selection := this.reloadTaskByList($board)
-
-	/*var findList : cs.ListEntity
-	var $info: object
-	if ($list.name = "Closed")
-		web Form.setError("You can not create a \"Closed\" List!")
-	else
-		$list.board := $board
-		findList := this.query("name = :1 AND board.ID = :2"; $list.name; $list.board.ID).first()
-		if (findList.name = $list.name)
-			web Form.setError("This name exists already!")
-		else
-			$info := $list.save()
-			web Form.setMessage("List Created Successfully!")
-			ds.setCss("addList"; "hidden")
-		end if 
-	end if 
-	$selection := this.reloadTaskByList($board)*/
+exposed Function verifyIfExist($name : Text; $board : cs:C1710.BoardEntity)
+	var $entity : cs:C1710.ListEntity
+	$entity:=This:C1470.query("name = :1 AND board.ID = :2"; $name; $board.ID).first()
+	If (($name=Null:C1517) || ($name=""))
+		ds:C1482.setCss("saveListAfterEditing"; "hidden")
+		ds:C1482.setCss("createList"; "hidden")
+	Else 
+		If ($entity#Null:C1517)
+			Web Form:C1735.setError("List already existed!")
+			ds:C1482.setCss("saveListAfterEditing"; "hidden")
+			ds:C1482.setCss("createList"; "hidden")
+		Else 
+			ds:C1482.removeCss("saveListAfterEditing"; "hidden")
+			ds:C1482.removeCss("createList"; "hidden")
+		End if 
+	End if 
 	
-exposed function updateBoardList($board : cs.BoardEntity; $list : cs.ListEntity)->$selection : cs.ListSelection
-	var $info: object
-	$info := $list.save()
-	web Form.setMessage("List Updated Successfully!")
-	$selection := this.reloadTaskByList($board)
-
-	/*var findList : cs.ListEntity
-	var $info: object
+exposed Function taskList($task : cs:C1710.TaskEntity)->$list : cs:C1710.ListEntity
+	$list:=This:C1470.query("tasks.ID = :1"; $task.ID).first()
 	
-	if ($list.name = "Closed")
-		web Form.setError("You can not name it \"Closed\"!")
-	else
-		$list.board := $board
-		findList := this.query("name = :1 AND board.ID = :2"; $list.name; $list.board.ID).first()
-		if (findList.name = $list.name)
-			web Form.setError("This name exists already!")
-		else 
-			$info := $list.save()
-			web Form.setMessage("List Updated Successfully!")
-			ds.setCss("editList"; "hidden")
-		end if 
-	end if 
-	$selection := this.reloadTaskByList($board)*/
+exposed Function reloadTaskByList($board : cs:C1710.BoardEntity)->$selection : cs:C1710.ListSelection
+	$selection:=This:C1470.query("board.ID = :1 AND name # :2"; $board.ID; "Closed")
 	
-exposed function deleteList($list : cs.ListEntity)->$selection : cs.ListSelection
-	var $result: cs.ListEntity
-	var $result2: cs.TaskSelection
-	var $board: cs.BoardEntity
-	$board := $list.board
-	$result := this.query("ID = :1"; $list.ID).first()
-	$result2 := ds.Task.query("list.ID = :1"; $list.ID)
+exposed Function createBoardList($board : cs:C1710.BoardEntity; $list : cs:C1710.ListEntity)->$selection : cs:C1710.ListSelection
+	var $info : Object
+	$info:=$list.save()
+	Web Form:C1735.setMessage("List Created Successfully!")
+	$selection:=This:C1470.reloadTaskByList($board)
+	
+exposed Function updateBoardList($board : cs:C1710.BoardEntity; $list : cs:C1710.ListEntity)->$selection : cs:C1710.ListSelection
+	var $info : Object
+	$info:=$list.save()
+	Web Form:C1735.setMessage("List Updated Successfully!")
+	$selection:=This:C1470.reloadTaskByList($board)
+	
+	
+exposed Function deleteList($list : cs:C1710.ListEntity)->$selection : cs:C1710.ListSelection
+	var $result : cs:C1710.ListEntity
+	var $result2 : cs:C1710.TaskSelection
+	var $board : cs:C1710.BoardEntity
+	$board:=$list.board
+	$result:=This:C1470.query("ID = :1"; $list.ID).first()
+	$result2:=ds:C1482.Task.query("list.ID = :1"; $list.ID)
 	$result2.drop()
 	$result.drop()
-	web Form.setMessage("List deleted Successfully!")
-	$selection := this.reloadTaskByList($board)
+	Web Form:C1735.setMessage("List deleted Successfully!")
+	$selection:=This:C1470.reloadTaskByList($board)

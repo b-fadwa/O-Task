@@ -1,41 +1,8 @@
 Class extends Entity
 
-/*local Function $aws()->$result : Object
-$result:=Null
-If (Session.storage.users=Null)
-ds.loadUser()
-End if 
-If (Session.storage.users#Null)
-//$result = session.storage.users.query("ID = :1"; this.email).at(0)
-$result:=Session.storage.users.query("email = :1"; This.email).at(0)
-End if */
 
 exposed Function get fullName()->$fullName : Text
 	$fullName:=(This:C1470.firstName && This:C1470.lastName) ? (This:C1470.firstName+" "+Uppercase:C13(This:C1470.lastName; *)) : (Uppercase:C13(This:C1470.lastName; *) || This:C1470.firstName) || ""
-	
-/*exposed Function get firstName()->$firstname : Text
-var $aws : Object
-$firstname:=""
-$aws:=This.aws()
-If ($aws#Null)
-$firstname:=$aws.firstname
-End if 
-	
-exposed Function get lastName()->$lastname : Text
-var $aws : Object
-$lastname:=""
-$aws:=This.aws()
-If ($aws#Null)
-$lastname:=$aws.lastname
-End if 
-	
-exposed Function get role()->$role : Text
-var $aws : Object
-$role:=""
-$aws:=This.aws()
-If ($aws#Null)
-$role:=$aws.role
-End if */
 	
 exposed Function get activeNotifications()->$notif : Text
 	var $nbr : Integer
