@@ -110,16 +110,14 @@ Explore the different pages to discover all available features.
 
 ### 3. Customize as Needed
 
-OTask is designed to be extensible.  
-You can enhance or adapt:
+OTask is designed to adapt easily to your workflow. You can customize it by:
 
-- The **data model**  
-- UI pages in **QodlyPages**  
-- Business logic in project methods  
-- Workflow automation (incident escalation, alerts)  
-- License validation rules  
-- Asset categories and metadata  
+- Extending **boards, tasks, and incidents** with custom statuses, priorities, or fields  
+- Adjusting the **data model** to fit your project structure  
+- Customizing **UI pages** in QodlyPages (dashboards, task lists, incident views)  
+- Enhancing **business logic** for automation, validations, or notifications  
 
-Use the platform as a foundation for your own IT management systems.
+Use OTask as a ready-to-use solution or as a foundation for a tailored project and incident management system.
+
 
 ---
