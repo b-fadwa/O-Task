@@ -82,7 +82,7 @@ These visuals help users quickly understand how the system is structured and use
 
 # 🚀 How to Integrate and Use the Application
 
-Follow these steps to get OoTask* running in your Qodly project.
+Follow these steps to get OTask running in your Qodly project.
 
 ---
 
