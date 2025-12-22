@@ -1,6 +1,8 @@
 Class extends DataClass
 
-exposed Function selectArchived($search : Text; $zone : Text)->$selection : cs:C1710.BoardSelection
+// Functions to create, delete, and search archived boards for the current user
+
+exposed Function selectArchived($search : Text; $zone : Text)->$selection : cs:C1710.ArchivedBoardSelection
 	var $archivedBoards : cs:C1710.ArchivedBoardSelection
 	var $user : cs:C1710.UserEntity
 	$user:=ds:C1482.User.getCurrentUser()

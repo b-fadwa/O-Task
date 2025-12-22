@@ -1,5 +1,6 @@
 Class extends DataStoreImplementation
 
+// Generates an HTML email template with a given title and content
 exposed Function authentify($email : Text; $password : Text) : Boolean
 	var $adminPrivileges : Collection:=["Tag"; "Incident"; "List"; "Board"; "currentUser"; "Task"; "chooseUserBoard"]
 	var $pmPrivileges : Collection:=["privateBoardOrNot"; "Marketing"; "Tag"; "Incident"; "List"; "Board"; "currentUser"; "Task"]
@@ -31,6 +32,7 @@ exposed Function authentify($email : Text; $password : Text) : Boolean
 		End if 
 	End if 
 	
+	//used to add / remove css classes from components
 exposed Function setCss($serverRef : Text; $cssClass : Text)
 	var $component : 4D:C1709.WebFormItem
 	$component:=Web Form:C1735[$serverRef]
@@ -41,6 +43,7 @@ exposed Function removeCss($serverRef : Text; $cssClass : Text)
 	$component:=Web Form:C1735[$serverRef]
 	$component.removeCSSClass($cssClass)
 	
+	// UI helpers to toggle between duration-based and end-date-based inputs
 exposed Function showDuration()
 	ds:C1482.setCss("endDate"; "hidden")
 	ds:C1482.removeCss("days"; "hidden")
@@ -49,28 +52,32 @@ exposed Function showEndDate()
 	ds:C1482.removeCss("endDate"; "hidden")
 	ds:C1482.setCss("days"; "hidden")
 	
-exposed Function getManifestObject() : Object  //used in HomePage
+	//used to get the manifest structure for the Home page
+exposed Function getManifestObject() : Object
 	var $manifestFile : 4D:C1709.File
 	var $manifestObject : Object
 	$manifestFile:=File:C1566("/PACKAGE/Project/Sources/Shared/manifest.json")
 	$manifestObject:=JSON Parse:C1218($manifestFile.getText())
 	return $manifestObject
 	
-exposed Function generateData()  //used in HomePage
+	//used to generate data
+exposed Function generateData()
 	var $initData : cs:C1710.InitData
 	$initData:=cs:C1710.InitData.new()
 	$initData.dropData()
 	$initData.createData()
 	Web Form:C1735.setMessage("Data Generated Successfully!")
 	
+	//getting the direct content from the text editor
 exposed Function getTextFromTextEditor($content : Text) : Text
 	return JSON Parse:C1218($content)[0].children[0].text
 	
+	//reads the credentials from the json file with your sendGrid api credentials
 exposed Function getCredentials() : Object
 	var $jsonFile : 4D:C1709.File
 	var $text : Text
 	var $fileContent : Object
-	$jsonFile:=File:C1566("/PROJECT/Sources/Shared/credentials/env.json")  //fill the json file with your sendGrid api credentials
+	$jsonFile:=File:C1566("/PROJECT/Sources/Shared/credentials/env.json")
 	$text:=$jsonFile.getText()
 	$fileContent:=JSON Parse:C1218($text; 38)
 	return $fileContent

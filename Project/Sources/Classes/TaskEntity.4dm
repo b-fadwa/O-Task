@@ -1,134 +1,136 @@
 Class extends Entity
 
-exposed alias boardOfTask list.board
-exposed alias tags taskTags.tag
+exposed Alias boardOfTask list.board
+exposed Alias tags taskTags.tag
 
-exposed function getList()->$result : cs.ListEntity
-	$result := this.list
+exposed Function getList()->$result : cs:C1710.ListEntity
+	$result:=This:C1470.list
 	
-exposed function get isClosed()->$result : text
-	$result := (this.track = 100) ? "Closed" : "Not Closed"
+exposed Function get isClosed()->$result : Text
+	$result:=(This:C1470.track=100) ? "Closed" : "Not Closed"
 	
-exposed function get duration()->$result : integer
-	if ((this.startDate # null) && (this.endDate # null))
-		$result := this.endDate-this.startDate
-	end if 
+exposed Function get duration()->$result : Integer
+	If ((This:C1470.startDate#Null:C1517) && (This:C1470.endDate#Null:C1517))
+		$result:=This:C1470.endDate-This:C1470.startDate
+	End if 
 	
-exposed function get nbrComments()->$result : integer
-	$result := this.comments.length
+exposed Function get nbrComments()->$result : Integer
+	$result:=This:C1470.comments.length
 	
-exposed function get gapResult->$result : text
-	var $difference: integer
-	if (this.endDate # null)
-		$difference := this.endDate-current Date()
-		if (this.endDate > current Date())
-			$result := "notDeadline"
-		else 
-			if (this.endDate = current Date())
-				$result := "todayDeadline"
-			else 
-				$result := "overDue"
-			end if 
-		end if 
-	end if 
+exposed Function get gapResult->$result : Text
+	var $difference : Integer
+	If (This:C1470.endDate#Null:C1517)
+		$difference:=This:C1470.endDate-Current date:C33()
+		If (This:C1470.endDate>Current date:C33())
+			$result:="notDeadline"
+		Else 
+			If (This:C1470.endDate=Current date:C33())
+				$result:="todayDeadline"
+			Else 
+				$result:="overDue"
+			End if 
+		End if 
+	End if 
 	
-exposed function get gap()->$result : text
-	var $difference: integer
-	if (this.endDate # null)
-		$difference := this.endDate-current Date()
-		if (this.endDate > current Date())
-			$result := string($difference)+" day(s) to deadline"
-		else 
-			if (this.endDate = current Date())
-				$result := "Deadline Today"
-			else 
-				$result := string(-$difference)+" day(s) overdue"
-			end if 
-		end if 
-	end if 
+exposed Function get gap()->$result : Text
+	var $difference : Integer
+	If (This:C1470.endDate#Null:C1517)
+		$difference:=This:C1470.endDate-Current date:C33()
+		If (This:C1470.endDate>Current date:C33())
+			$result:=String:C10($difference)+" day(s) to deadline"
+		Else 
+			If (This:C1470.endDate=Current date:C33())
+				$result:="Deadline Today"
+			Else 
+				$result:=String:C10(-$difference)+" day(s) overdue"
+			End if 
+		End if 
+	End if 
 	
-exposed function EndDate($duration : integer)->$result : date
-	$result := this.startDate+$duration
+exposed Function EndDate($duration : Integer)->$result : Date
+	$result:=This:C1470.startDate+$duration
 	
-exposed function deleteActivities()
-	this.activities.drop()
+exposed Function deleteActivities()
+	This:C1470.activities.drop()
 	
-exposed function orderComments()->$comments : cs.CommentSelection
-	$comments := this.comments.orderBy("createdAt desc, createdTime desc")
+exposed Function orderComments()->$comments : cs:C1710.CommentSelection
+	$comments:=This:C1470.comments.orderBy("createdAt desc, createdTime desc")
 	
-exposed function create($tagsSelected : cs.TagSelection; $board : cs.BoardEntity; $listName : text)
-	var $info: object
-	var $subject; $content: text
-	var $listEnt: cs.ListEntity
-	var $tag: cs.TagEntity
-	var $taskTag: cs.TaskTagEntity
-	var $mailer: cs.Mailer
-	$mailer := cs.Mailer.new()
-	this.createdAt := current Date()
-	this.createdTime := current Time()
-	this.list := ds.List.query("board.ID = :1 AND name = :2"; $board.ID; $listName).first()
-	$info := this.save()
-	web Form.setMessage("Task Created Successfully!")
-	ds.Notification.generateNotification("task"; this.user; ds.User.getCurrentUser(); this)
-	ds.Activity.generateActivity("created the task"; "task"; null; this)
-	for Each ($tag; $tagsSelected)
-		$taskTag := ds.TaskTag.new()
-		$taskTag.tag := $tag
-		$taskTag.task := this
+exposed Function create($tagsSelected : cs:C1710.TagSelection; $board : cs:C1710.BoardEntity; $listName : Text)
+	var $info : Object
+	var $subject; $content : Text
+	var $listEnt : cs:C1710.ListEntity
+	var $tag : cs:C1710.TagEntity
+	var $taskTag : cs:C1710.TaskTagEntity
+	var $mailer : cs:C1710.Mailer
+	var $currentUser : cs:C1710.UserEntity:=ds:C1482.User.getCurrentUser()
+	$mailer:=cs:C1710.Mailer.new()
+	This:C1470.createdAt:=Current date:C33()
+	This:C1470.createdTime:=Current time:C178()
+	This:C1470.list:=ds:C1482.List.query("board.ID = :1 AND name = :2"; $board.ID; $listName).first()
+	$info:=This:C1470.save()
+	Web Form:C1735.setMessage("Task Created Successfully!")
+	ds:C1482.Notification.generateNotification("task"; This:C1470.user; $currentUser; This:C1470)
+	ds:C1482.Activity.generateActivity("created the task"; "task"; Null:C1517; This:C1470)
+	For each ($tag; $tagsSelected)
+		$taskTag:=ds:C1482.TaskTag.new()
+		$taskTag.tag:=$tag
+		$taskTag.task:=This:C1470
 		$taskTag.save()
-	end for each 
-	$subject := "New task created in the board: \""+this.boardOfTask.name+"\""
-	$content := "New task is been created in this board: \""+this.boardOfTask.name+"\". This is the task: \""+this.name+"\""
-	$mailer.sendMail("New Task Created"; $subject; $content; ds.User.getCurrentUser().email)
-	if (this.user # null)
-		$subject := "New task assigned to: \""+this.user.fullName+"\" in the board: \""+this.boardOfTask.name+"\""
-		$content := "New task is been assigned to \""+this.user.fullName+"\" in this board: \""+this.boardOfTask.name+"\". This is the task: \""+this.name+"\""
-		$mailer.sendMail("New Task Assigned to \""+this.user.fullName+"\""; $subject; $content; ds.User.getCurrentUser().email)
-	end if 
+	End for each 
+	$subject:="New task created in the board: \""+This:C1470.boardOfTask.name+"\""
+	$content:="New task is been created in this board: \""+This:C1470.boardOfTask.name+"\". This is the task: \""+This:C1470.name+"\""
+	$mailer.sendMail("New Task Created"; $subject; $content; $currentUser.email)
+	If (This:C1470.user#Null:C1517)
+		$subject:="New task assigned to: \""+This:C1470.user.fullName+"\" in the board: \""+This:C1470.boardOfTask.name+"\""
+		$content:="New task is been assigned to \""+This:C1470.user.fullName+"\" in this board: \""+This:C1470.boardOfTask.name+"\". This is the task: \""+This:C1470.name+"\""
+		$mailer.sendMail("New Task Assigned to \""+This:C1470.user.fullName+"\""; $subject; $content; $currentUser.email)
+	End if 
 	
-exposed function update($tagsSelected : cs.TagSelection; $board : cs.BoardEntity; $listName : text)
-	var $info: object
-	var $subject; $content: text
-	var $listEnt: cs.ListEntity
-	var $tag: cs.TagEntity
-	var $taskTag: cs.TaskTagEntity
-	var $mailer: cs.Mailer
-	$mailer := cs.Mailer.new()
-	this.UpdatedAt := current Date()
-	this.updatedtime := current Time()
-	this.list := ds.List.query("board.ID = :1 AND name = :2"; $board.ID; $listName).first()
-	$info := this.save()
-	web Form.setMessage("Task Edited Successfully!")
-	ds.TaskTag.dropTaskTags(this)
-	for Each ($tag; $tagsSelected)
-		$taskTag := ds.TaskTag.new()
-		$taskTag.tag := $tag
-		$taskTag.task := this
+exposed Function update($tagsSelected : cs:C1710.TagSelection; $board : cs:C1710.BoardEntity; $listName : Text)
+	var $info : Object
+	var $subject; $content : Text
+	var $listEnt : cs:C1710.ListEntity
+	var $tag : cs:C1710.TagEntity
+	var $taskTag : cs:C1710.TaskTagEntity
+	var $mailer : cs:C1710.Mailer
+	var $currentUser : cs:C1710.UserEntity:=ds:C1482.User.getCurrentUser()
+	$mailer:=cs:C1710.Mailer.new()
+	This:C1470.UpdatedAt:=Current date:C33()
+	This:C1470.updatedtime:=Current time:C178()
+	This:C1470.list:=ds:C1482.List.query("board.ID = :1 AND name = :2"; $board.ID; $listName).first()
+	$info:=This:C1470.save()
+	Web Form:C1735.setMessage("Task Edited Successfully!")
+	ds:C1482.TaskTag.dropTaskTags(This:C1470)
+	For each ($tag; $tagsSelected)
+		$taskTag:=ds:C1482.TaskTag.new()
+		$taskTag.tag:=$tag
+		$taskTag.task:=This:C1470
 		$taskTag.save()
-	end for each 
-	if (this.track = 100)
-		this.list := ds.List.query("name = :1 AND board.ID = :2"; "Closed"; this.boardOfTask.ID).first()
-		this.save()
-		ds.Notification.generateNotification("closedTask"; this.user; ds.User.getCurrentUser(); this)
-		ds.Activity.generateActivity("closed the task"; "task"; null; this)
-		$subject := "Task Closed in the board: \""+this.boardOfTask.name+"\""
-		$content := "The task: \""+this.name+"\" in this board: \""+this.boardOfTask.name+"\" is been closed by: \""+ds.User.getCurrentUser().fullName+"\" at: \""+string(this.UpdatedAt)+", "+string(time(this.updatedtime))+"\""
-		$mailer.sendMail("Task Closed"; $subject; $content; ds.User.getCurrentUser().email)
-	else 
-		if (this.list.name = "Closed")
-			this.list := ds.List.query("name = :1 AND board.ID = :2"; "Closed"; this.boardOfTask.ID).first()
-			this.track := 100
-			this.save()
-			ds.Notification.generateNotification("closedTask"; this.user; ds.User.getCurrentUser(); this)
-			ds.Activity.generateActivity("closed the task"; "task"; null; this)
-			$subject := "Task Closed in the board: \""+this.boardOfTask.name+"\""
-			$content := "The task: \""+this.name+"\" in this board: \""+this.boardOfTask.name+"\" is been closed by: \""+ds.User.getCurrentUser().fullName+"\" at: \""+string(this.UpdatedAt)+", "+string(time(this.updatedtime))+"\""
-			$mailer.sendMail("Task Closed"; $subject; $content; ds.User.getCurrentUser().email)
-		else 
-			ds.Notification.generateNotification("updateTask"; this.user; ds.User.getCurrentUser(); this)
-			ds.Activity.generateActivity("updated the task"; "task"; null; this)
-			$subject := "Task Updated in the board: \""+this.boardOfTask.name+"\""
-			$content := ds.User.getCurrentUser().fullName+" has updated the task : \""+this.name+"\" assigned to: \""+this.user.fullName+"\" in this board: \""+this.boardOfTask.name+"\" at: \""+string(this.UpdatedAt)+", "+string(time(this.updatedtime))+"\""
-			$mailer.sendMail("Task Updated"; $subject; $content; ds.User.getCurrentUser().email)
-		end if 
-	end if
+	End for each 
+	If (This:C1470.track=100)
+		This:C1470.list:=ds:C1482.List.query("name = :1 AND board.ID = :2"; "Closed"; This:C1470.boardOfTask.ID).first()
+		This:C1470.save()
+		ds:C1482.Notification.generateNotification("closedTask"; This:C1470.user; $currentUser; This:C1470)
+		ds:C1482.Activity.generateActivity("closed the task"; "task"; Null:C1517; This:C1470)
+		$subject:="Task Closed in the board: \""+This:C1470.boardOfTask.name+"\""
+		$content:="The task: \""+This:C1470.name+"\" in this board: \""+This:C1470.boardOfTask.name+"\" is been closed by: \""+$currentUser.fullName+"\" at: \""+String:C10(This:C1470.UpdatedAt)+", "+String:C10(Time:C179(This:C1470.updatedtime))+"\""
+		$mailer.sendMail("Task Closed"; $subject; $content; $currentUser.email)
+	Else 
+		If (This:C1470.list.name="Closed")
+			This:C1470.list:=ds:C1482.List.query("name = :1 AND board.ID = :2"; "Closed"; This:C1470.boardOfTask.ID).first()
+			This:C1470.track:=100
+			This:C1470.save()
+			ds:C1482.Notification.generateNotification("closedTask"; This:C1470.user; $currentUser; This:C1470)
+			ds:C1482.Activity.generateActivity("closed the task"; "task"; Null:C1517; This:C1470)
+			$subject:="Task Closed in the board: \""+This:C1470.boardOfTask.name+"\""
+			$content:="The task: \""+This:C1470.name+"\" in this board: \""+This:C1470.boardOfTask.name+"\" is been closed by: \""+$currentUser.fullName+"\" at: \""+String:C10(This:C1470.UpdatedAt)+", "+String:C10(Time:C179(This:C1470.updatedtime))+"\""
+			$mailer.sendMail("Task Closed"; $subject; $content; $currentUser.email)
+		Else 
+			ds:C1482.Notification.generateNotification("updateTask"; This:C1470.user; $currentUser; This:C1470)
+			ds:C1482.Activity.generateActivity("updated the task"; "task"; Null:C1517; This:C1470)
+			$subject:="Task Updated in the board: \""+This:C1470.boardOfTask.name+"\""
+			$content:=$currentUser.fullName+" has updated the task : \""+This:C1470.name+"\" assigned to: \""+This:C1470.user.fullName+"\" in this board: \""+This:C1470.boardOfTask.name+"\" at: \""+String:C10(This:C1470.UpdatedAt)+", "+String:C10(Time:C179(This:C1470.updatedtime))+"\""
+			$mailer.sendMail("Task Updated"; $subject; $content; $currentUser.email)
+		End if 
+	End if 

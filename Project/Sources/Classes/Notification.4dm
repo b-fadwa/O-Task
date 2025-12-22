@@ -48,6 +48,7 @@ exposed Function generateNotifAssignee($user : cs:C1710.UserEntity; $problem : c
 	$notification.content:="New incident has been assigned to you: \""+$problem.title+"\""
 	$info:=$notification.save()
 	
+	//notifies if the task's deadline is today
 exposed Function tasksDeadlineToday($user : cs:C1710.UserEntity)
 	var $notification : cs:C1710.NotificationEntity
 	var $notifs : cs:C1710.NotificationSelection

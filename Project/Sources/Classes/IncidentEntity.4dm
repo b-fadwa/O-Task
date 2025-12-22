@@ -1,58 +1,61 @@
 Class extends Entity
 
-exposed function get nbrTasks()->$result : integer
-	$result := this.tasks.length
+exposed Function get nbrTasks()->$result : Integer
+	$result:=This:C1470.tasks.length
 	
-exposed function get isUpdated()->$result : boolean
-	$result := (this.updatedAt = null) ? false : true
+exposed Function get isUpdated()->$result : Boolean
+	$result:=(This:C1470.updatedAt=Null:C1517) ? False:C215 : True:C214
 	
-exposed function createIncident()
-	var $mailer: cs.Mailer
-	var $subject; $content: text
-	$mailer := cs.Mailer.new()
-	this.createdAt := current Date()
-	this.creationTime := current Time()
-	this.save()
-	web Form.setMessage("Incident Created Successfully!")
-	ds.Activity.generateActivity("created the incident"; "incident"; this; null)
-	if (this.assignee # null)
-		ds.Activity.generateActivity("assigned to "+this.assignee.fullName; "assigneeIncident"; this; null)
-		ds.Notification.generateNotifAssignee(this.assignee; this)
-		$subject := "New incident assigned to you: \""+this.title+"\""
-		$content := "An incident is been assigned to you: \""+this.title+"\", created by: \""+ds.User.getCurrentUser().fullName+"\" at: \""+string(this.createdAt)+", "+string(time(this.creationTime))+"\""
-		$mailer.sendMail("New Incident assigned to you"; $subject; $content; this.assignee.email)
-	end if 
-	$subject := "New incident declared: \""+this.title+"\""
-	$content := "An incident is been declared: \""+this.title+"\", created by: \""+ds.User.getCurrentUser().fullName+"\" at: \""+string(this.createdAt)+", "+string(time(this.creationTime))+"\""
-	$mailer.sendMail("New Incident declared"; $subject; $content; ds.User.getCurrentUser().email)
+exposed Function createIncident()
+	var $mailer : cs:C1710.Mailer
+	var $subject; $content : Text
+	var $currentUser : cs:C1710.UserEntity:=ds:C1482.User.getCurrentUser()
+	$mailer:=cs:C1710.Mailer.new()
+	This:C1470.createdAt:=Current date:C33()
+	This:C1470.creationTime:=Current time:C178()
+	This:C1470.save()
+	Web Form:C1735.setMessage("Incident Created Successfully!")
+	ds:C1482.Activity.generateActivity("created the incident"; "incident"; This:C1470; Null:C1517)
+	If (This:C1470.assignee#Null:C1517)
+		ds:C1482.Activity.generateActivity("assigned to "+This:C1470.assignee.fullName; "assigneeIncident"; This:C1470; Null:C1517)
+		ds:C1482.Notification.generateNotifAssignee(This:C1470.assignee; This:C1470)
+		$subject:="New incident assigned to you: \""+This:C1470.title+"\""
+		$content:="An incident is been assigned to you: \""+This:C1470.title+"\", created by: \""+$currentUser.fullName+"\" at: \""+String:C10(This:C1470.createdAt)+", "+String:C10(Time:C179(This:C1470.creationTime))+"\""
+		$mailer.sendMail("New Incident assigned to you"; $subject; $content; This:C1470.assignee.email)
+	End if 
+	$subject:="New incident declared: \""+This:C1470.title+"\""
+	$content:="An incident is been declared: \""+This:C1470.title+"\", created by: \""+$currentUser.fullName+"\" at: \""+String:C10(This:C1470.createdAt)+", "+String:C10(Time:C179(This:C1470.creationTime))+"\""
+	$mailer.sendMail("New Incident declared"; $subject; $content; $currentUser.email)
 	
-exposed function updateIncident()
-	var $mailer: cs.Mailer
-	var $subject; $content: text
-	$mailer := cs.Mailer.new()
-	this.updatedAt := current Date()
-	this.updateTime := current Time()
-	this.save()
-	web Form.setMessage("Incident Updated Successfully!")
-	if (this.status = "closed")
-		ds.Activity.generateActivity("closed the incident"; "incident"; this; null)
-		$subject := "Incident closed: \""+this.title+"\""
-		$content := "The incident: \""+this.title+"\" is been closed by: \""+ds.User.getCurrentUser().fullName+"\" at: \""+string(this.updatedAt)+", "+string(time(this.updateTime))+"\""
-		$mailer.sendMail("Incident Closed"; $subject; $content; ds.User.getCurrentUser().email)
-	else 
-		ds.Activity.generateActivity("updated the incident"; "incident"; this; null)
-		$subject := "Incident updated: \""+this.title+"\""
-		$content := ds.User.getCurrentUser().fullName+" has updated the incident: \""+this.title+"\" at: \""+string(this.updatedAt)+", "+string(time(this.updateTime))+"\""
-		$mailer.sendMail("Incident Updated"; $subject; $content; ds.User.getCurrentUser().email)
-	end if 
-	if (this.assignee # null)
-		ds.Activity.generateActivity("assigned to "+this.assignee.fullName; "assigneeIncident"; this; null)
-		ds.Notification.generateNotifAssignee(this.assignee; this)
-		$subject := "Incident assigned: \""+this.title+"\""
-		$content := ds.User.getCurrentUser().fullName+" has assigned the incident: \""+this.title+"\" to: \""+this.assignee.fullName+"\" at: \""+string(this.updatedAt)+", "+string(time(this.updateTime))+"\""
-		$mailer.sendMail("Incident Assigned"; $subject; $content; ds.User.getCurrentUser().email)
-	end if 
+exposed Function updateIncident()
+	var $mailer : cs:C1710.Mailer
+	var $subject; $content : Text
+	var $currentUser : cs:C1710.UserEntity:=ds:C1482.User.getCurrentUser()
 	
-exposed function orderComments()->$comments : cs.CommentSelection
-	this.reload()
-	$comments := this.comments.orderBy("createdAt desc, createdTime desc")
+	$mailer:=cs:C1710.Mailer.new()
+	This:C1470.updatedAt:=Current date:C33()
+	This:C1470.updateTime:=Current time:C178()
+	This:C1470.save()
+	Web Form:C1735.setMessage("Incident Updated Successfully!")
+	If (This:C1470.status="closed")
+		ds:C1482.Activity.generateActivity("closed the incident"; "incident"; This:C1470; Null:C1517)
+		$subject:="Incident closed: \""+This:C1470.title+"\""
+		$content:="The incident: \""+This:C1470.title+"\" is been closed by: \""+$currentUser.fullName+"\" at: \""+String:C10(This:C1470.updatedAt)+", "+String:C10(Time:C179(This:C1470.updateTime))+"\""
+		$mailer.sendMail("Incident Closed"; $subject; $content; $currentUser.email)
+	Else 
+		ds:C1482.Activity.generateActivity("updated the incident"; "incident"; This:C1470; Null:C1517)
+		$subject:="Incident updated: \""+This:C1470.title+"\""
+		$content:=$currentUser.fullName+" has updated the incident: \""+This:C1470.title+"\" at: \""+String:C10(This:C1470.updatedAt)+", "+String:C10(Time:C179(This:C1470.updateTime))+"\""
+		$mailer.sendMail("Incident Updated"; $subject; $content; $currentUser.email)
+	End if 
+	If (This:C1470.assignee#Null:C1517)
+		ds:C1482.Activity.generateActivity("assigned to "+This:C1470.assignee.fullName; "assigneeIncident"; This:C1470; Null:C1517)
+		ds:C1482.Notification.generateNotifAssignee(This:C1470.assignee; This:C1470)
+		$subject:="Incident assigned: \""+This:C1470.title+"\""
+		$content:=ds:C1482.User.getCurrentUser().fullName+" has assigned the incident: \""+This:C1470.title+"\" to: \""+This:C1470.assignee.fullName+"\" at: \""+String:C10(This:C1470.updatedAt)+", "+String:C10(Time:C179(This:C1470.updateTime))+"\""
+		$mailer.sendMail("Incident Assigned"; $subject; $content; ds:C1482.User.getCurrentUser().email)
+	End if 
+	
+exposed Function orderComments()->$comments : cs:C1710.CommentSelection
+	This:C1470.reload()
+	$comments:=This:C1470.comments.orderBy("createdAt desc, createdTime desc")
