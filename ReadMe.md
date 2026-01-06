@@ -3,7 +3,7 @@
 This demo app is built with **4D Qodly Pro** and is designed to help teams manage projects, tasks, and incidents in a clear and structured way.
 
 
-## Purpose
+## Purpose of the application
 
 The **OTask Application** centralizes project and task management into a single, intuitive system.  
 It helps teams collaborate better by organizing work into boards, tracking tasks, and handling incidents separately.
@@ -40,12 +40,10 @@ The application aims to:
 ## How to Run
 
 ### Pre-requisites (4D Software)
-- Download the latest Release version of 4D:  
-  https://us.4d.com/product-download/Feature-Release  
-- Or the latest Beta version:  
-  https://discuss.4d.com/  
-- Follow activation steps:  
-  https://developer.4d.com/docs/GettingStarted/installation  
+- Download the latest Release version of 4D: [Product Download](https://us.4d.com/product-download/Feature-Release)  
+- Or the latest Beta version: [Beta Program](https://discuss.4d.com/)  
+- Follow activation steps: [Installation Guide](https://developer.4d.com/docs/GettingStarted/installation)
+
 
 ### Steps to Run the Project
 - Clone or download this repository to your local machine.  
@@ -72,8 +70,6 @@ Example format:
 ### Security Best Practices
 - Do not commit real credentials to source control.
 - Add `env.json` to `.gitignore`.
-- Inject secrets securely at deploy time.
-
 ---
 
 ## Test Accounts and Sample Data
@@ -85,25 +81,24 @@ Sample data can be generated via a dedicated data generator function or from the
 
 ## Where to Find the Code for Each Feature
 
+- **Generating data**
+
+  - Server: `InitData.4dm` — Generated random data for the application's dataclasses.
+
+  - UI: `HomePage.WebForm`
+
 - **Authentication & Roles**
   - Server: `DataStore.4dm`
   - UI: `SignIn.WebForm` / `HomePage.WebForm`
 
-- **Boards**
-  - UI: `BoardAllProjects.WebForm`,`BoardArchived.WebForm`,`BoardPrivate.WebForm`,`BoardPublic.WebForm`
-  - Server/Data: `Board.4dm`, `BoardEntity.4dm`
-
-- **Tasks**
-  - UI: `TasksDisplay1.WebForm`,`TasksDisplay2.WebForm`,`TasksDisplay3.WebForm`,`DisplayTask.WebForm`,`DisplayTaskFromDashboard.WebForm`,`EditTask.WebForm`
-  - Server/Data: `Task.4dm`, `TaskEntity.4dm`,`TaskSelection.4dm`,`TaskIncident.4dm`,`TaskTag.4dm`
-
-- **Incidents**
-  - UI: `Incidents.WebForm`,`NewIncident.WebForm`,`DetailIncident.WebForm`
-  - Server/Data: `Incident.4dm`, `IncidentEntity.4dm`
-
 - **Dashboard**
-  - UI: `DashboardPage.WebForm`
+  - UI: `DashboardPage.WebForm` -->
 
----
+- **Custom UI components** used to enhance user experience, including:
+
+  - Tags (in the editTask page and other pages)
+
+  - Slate editor (in the updateIncident page and other pages)
+
 
 This structure allows you to easily customize, extend, or reuse **OTask** as a foundation for your own project, task, and incident management solutions.
