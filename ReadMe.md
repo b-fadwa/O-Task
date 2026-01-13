@@ -91,9 +91,6 @@ Sample data can be generated via a dedicated data generator function or from the
   - Server: `DataStore.4dm`
   - UI: `SignIn.WebForm` / `HomePage.WebForm`
 
-- **Dashboard**
-  - UI: `DashboardPage.WebForm` -->
-
 - **Custom UI components** used to enhance user experience, including:
 
   - Tags (in the editTask page and other pages)
