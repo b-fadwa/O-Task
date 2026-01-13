@@ -5,7 +5,7 @@ exposed Function authentify($email : Text; $password : Text) : Boolean
 	var $adminPrivileges : Collection:=["Tag"; "Incident"; "List"; "Board"; "currentUser"; "Task"; "chooseUserBoard"]
 	var $pmPrivileges : Collection:=["privateBoardOrNot"; "Marketing"; "Tag"; "Incident"; "List"; "Board"; "currentUser"; "Task"]
 	var $developerPrivileges : Collection:=["boardUserDeveloper"; "Engineering"; "Tag"; "Incident"; "List"; "Board"; "currentUser"; "Task"]
-	If (($email="") && ($password=""))
+	If ((($email="") && ($password="")))
 		return Session:C1714.setPrivileges(["guest"; "guestPromoted"])
 	End if 
 	If ($email#"")

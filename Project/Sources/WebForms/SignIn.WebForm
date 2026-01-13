@@ -56,7 +56,43 @@
 			"isCanvas": true,
 			"props": {
 				"classNames": [],
-				"events": [],
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "DataStore",
+						"events": [
+							"oninit"
+						],
+						"id": "uFzNpPy5aYqyQT5dXYwJen",
+						"method": "ds.authentify",
+						"params": [
+							{
+								"name": "email",
+								"type": "Text",
+								"datasource": "",
+								"id": "dA8gTZCrMGKSfFTLvRnKc8",
+								"isHardCoded": true,
+								"hardCodedType": "string",
+								"hardCodedValue": ""
+							},
+							{
+								"name": "password",
+								"type": "Text",
+								"datasource": "",
+								"id": "6rzs3KkZMi1UM8QPu6k4DJ",
+								"isHardCoded": true,
+								"hardCodedType": "string",
+								"hardCodedValue": ""
+							}
+						],
+						"datasource": "",
+						"allowedOnHTTPGET": false,
+						"returns": {
+							"name": "result",
+							"type": "Boolean"
+						}
+					}
+				],
 				"className": "bg-white h-full w-full px-6",
 				"airyMode": false,
 				"style": {
@@ -103,8 +139,7 @@
 			"parent": "ROOT",
 			"hidden": false,
 			"nodes": [
-				"YJ5yyKR5b6",
-				"yE2pIs0Zv3"
+				"YJ5yyKR5b6"
 			],
 			"linkedNodes": {}
 		},
@@ -559,60 +594,6 @@
 				"input": "6lRGy0-jl1"
 			}
 		},
-		"yE2pIs0Zv3": {
-			"type": {
-				"resolvedName": "StyleBox"
-			},
-			"isCanvas": true,
-			"props": {
-				"events": [],
-				"style": {
-					"width": "50%",
-					"height": "100%",
-					"minWidth": "50%",
-					"paddingLeft": "0px",
-					"paddingTop": "0px",
-					"paddingRight": "0px",
-					"paddingBottom": "0px",
-					"maxHeight": "100%"
-				},
-				"iterableChild": true,
-				"serverSideRef": "picturePanel"
-			},
-			"displayName": "Stylebox",
-			"custom": {},
-			"parent": "kXguMo3Mj8",
-			"hidden": false,
-			"nodes": [
-				"Dx5ofggFyu"
-			],
-			"linkedNodes": {}
-		},
-		"Dx5ofggFyu": {
-			"type": {
-				"resolvedName": "Image"
-			},
-			"isCanvas": false,
-			"props": {
-				"classNames": [],
-				"events": [],
-				"style": {
-					"height": "100%",
-					"width": "100%",
-					"maxWidth": "100%",
-					"objectFit": "contain"
-				},
-				"imgSrc": "/$shared/logos/otaskBlue.png",
-				"serverSideRef": "",
-				"defaultImgSrc": ""
-			},
-			"displayName": "Image",
-			"custom": {},
-			"parent": "yE2pIs0Zv3",
-			"hidden": false,
-			"nodes": [],
-			"linkedNodes": {}
-		},
 		"YJ5yyKR5b6": {
 			"type": {
 				"resolvedName": "StyleBox"
@@ -621,19 +602,18 @@
 			"props": {
 				"events": [],
 				"style": {
-					"width": "50%",
-					"minWidth": "50%",
+					"width": "100px",
+					"minWidth": "100%",
 					"paddingLeft": "72px",
 					"paddingTop": "0px",
 					"paddingBottom": "0px",
 					"paddingRight": "72px",
 					"display": "flex",
 					"flexDirection": "column",
-					"alignItems": "start",
-					"justifyContent": "flex-start",
+					"alignItems": "center",
+					"justifyContent": "center",
 					"overflow": "auto",
-					"borderRightWidth": "2px",
-					"borderRightColor": "#3A5BCD"
+					"borderRightColor": " "
 				},
 				"iterableChild": true,
 				"serverSideRef": "loginPanel"
@@ -663,7 +643,7 @@
 					"display": "flex",
 					"flexDirection": "column",
 					"gap": "12px",
-					"width": "100%"
+					"width": "50%"
 				}
 			},
 			"displayName": "Stylebox",
@@ -692,7 +672,7 @@
 					"display": "flex",
 					"flexDirection": "column",
 					"gap": "12px",
-					"width": "100%"
+					"width": "50%"
 				}
 			},
 			"displayName": "Stylebox",
