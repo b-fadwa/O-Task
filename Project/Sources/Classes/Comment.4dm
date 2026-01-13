@@ -1,5 +1,6 @@
 Class extends DataClass
 
+//functions to create new comments for tasks/incidents
 exposed Function newTaskComment($comment : cs:C1710.CommentEntity; $task : cs:C1710.TaskEntity)->$comments : cs:C1710.CommentSelection
 	var $info : Object
 	var $mailer : cs:C1710.Mailer

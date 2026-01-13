@@ -1,123 +1,104 @@
-# ✅ OTask  
-### A Project, Task & Incident Management Application
+# ✅ OTask Application
 
-OTask is a project management application designed to help teams organize their work efficiently through structured boards, tasks, and incident tracking.  
-Built to support clear workflows and collaboration, it provides a centralized space to manage projects from start to finish.
+This demo app is built with **4D Qodly Pro** and is designed to help teams manage projects, tasks, and incidents in a clear and structured way.
 
----
 
-## 🎯 Purpose of the Application
+## Purpose of the application
 
-Managing projects often involves handling multiple tasks, tracking incidents, and coordinating team efforts.  
-OTask simplifies this process by offering a structured board-based system where everything is organized and easy to follow.
+The **OTask Application** centralizes project and task management into a single, intuitive system.  
+It helps teams collaborate better by organizing work into boards, tracking tasks, and handling incidents separately.
 
 The application aims to:
 
-- Organize work into **boards (projects)**  
+- Structure work into **boards (projects)**  
 - Track **tasks** and their progress  
-- Manage **incidents** separately and efficiently  
-- Improve visibility and collaboration across teams  
-
-![Dashboard page](Project/Sources/Shared/visuals/DashBoard.png)
+- Manage **incidents** independently from tasks  
+- Improve team visibility and collaboration  
 
 ---
 
-## 🧩 What the App Covers
+## Main Features
 
-OTask is organized around core project management features.
+- **Dashboard**: Global overview of boards, tasks, and incidents.  
 
----
+  ![Dashboard page](Project/Sources/Shared/visuals/DashBoard.png)
 
-### 📋 1. Boards (Projects)
+- **Boards (Projects)**: Organize work into project-based boards.  
 
-Boards represent projects or workspaces.
+  ![Boards page](Project/Sources/Shared/visuals/AllBoards.png)
 
-- Create and manage multiple boards  
-- Group tasks under specific projects  
-- Get a clear overview of ongoing work  
+- **Task Management**: Create, assign, and track tasks with clear statuses.  
 
-![Boards page](Project/Sources/Shared/visuals/AllBoards.png)
+  ![Tasks page](Project/Sources/Shared/visuals/TasksNormalView.png)
 
+- **Incident Management**: Log, monitor, and resolve incidents efficiently.  
 
----
+  ![Incidents page](Project/Sources/Shared/visuals/Incidents.png)
 
-### ✅ 2. Task Management
+- **Role-Based Access**: Access and visibility adapted to user roles.
 
-Track work items with clarity and structure.
+## How to Run
 
-- Create, update, and manage tasks  
-- Assign tasks to team members  
-- Monitor task status and progress  
-- Keep work organized and actionable 
-
-![Tasks page](Project/Sources/Shared/visuals/TasksNormalView.png)
+### Pre-requisites (4D Software)
+- Download the latest Release version of 4D: [Product Download](https://us.4d.com/product-download/Feature-Release)  
+- Or the latest Beta version: [Beta Program](https://discuss.4d.com/)  
+- Follow activation steps: [Installation Guide](https://developer.4d.com/docs/GettingStarted/installation)
 
 
----
-
-### 🚨 3. Incident Management
-
-Handle unexpected issues efficiently.
-
-- Log and track incidents  
-- Follow incident resolution progress  
-- Separate incidents from regular tasks for clarity  
-
-![Incidents page](Project/Sources/Shared/visuals/Incidents.png)
-
+### Steps to Run the Project
+- Clone or download this repository to your local machine.  
+- Open the project in 4D: **File > Open Project**  
+- Open **Qodly Studio**: **Design > Qodly Studio**  
+- Click **Run** to start the server and preview the app in your browser.
 
 ---
 
-### 📸 4. Visual Overview
+## Configuration & Credentials
 
-The application includes visual interfaces and screenshots showcasing:
+### Do I need to create external accounts?
+- **Mailing (optional)**: Required only if you want email notifications (task or incident reminders).
+  - SMTP-compatible services such as **SendGrid SMTP** can be used.
 
-- Board layouts  
-- Task lists  
-- Incident tracking views  
+### Where does the app read credentials?
+- Mailing credentials are loaded from an `env.json` file located in the **credentials** folder.
+- This file contains SMTP configuration such as host, port, user, and password.
 
-These visuals help users quickly understand how the system is structured and used.
+Example format:
+
+![Credentials file format](Project/Sources/Shared/visuals/envFormat.png)
+
+### Security Best Practices
+- Do not commit real credentials to source control.
+- Add `env.json` to `.gitignore`.
+---
+
+## Test Accounts and Sample Data
+
+Sample data can be generated via a dedicated data generator function or from the UI.
+
 
 ---
 
-# 🚀 How to Integrate and Use the Application
+## Where to Find the Code for Each Feature
 
-Follow these steps to get OTask running in your Qodly project.
+- **Generating data**
 
----
+  - Server: `InitData.4dm` — Generated random data for the application's dataclasses.
 
-### 1. Clone or Import the Template
+  - UI: `HomePage.WebForm`
 
-Download or clone the oTask project into your **Qodly workspace** or 4D project folder.  
-Open the project inside **Qodly Studio**.
+- **Authentication & Roles**
+  - Server: `DataStore.4dm`
+  - UI: `SignIn.WebForm` / `HomePage.WebForm`
 
----
+- **Dashboard**
+  - UI: `DashboardPage.WebForm` -->
 
-### 2. Launch the Application
+- **Custom UI components** used to enhance user experience, including:
 
-Open the project in **Qodly Studio** and run the application.
+  - Tags (in the editTask page and other pages)
 
-You can choose your preferred **starting page**:
-
-- **HomePage** for a global overview of projects and tasks  
-- **StartPage** to start directly with authentication  
-
-Explore the different pages to discover all available features.
-
- ⚠️ To enable the mailing feature using the sendgrid api in oTask, mailing credentials must be configured bysetting the env file in the credentials folder in the application (see below).
-
- ![Credentials file format](Project/Sources/Shared/visuals/envFormat.png)
-
-### 3. Customize as Needed
-
-OTask is designed to adapt easily to your workflow. You can customize it by:
-
-- Extending **boards, tasks, and incidents** with custom statuses, priorities, or fields  
-- Adjusting the **data model** to fit your project structure  
-- Customizing **UI pages** in QodlyPages (dashboards, task lists, incident views)  
-- Enhancing **business logic** for automation, validations, or notifications  
-
-Use OTask as a ready-to-use solution or as a foundation for a tailored project and incident management system.
+  - Slate editor (in the updateIncident page and other pages)
 
 
----
+This structure allows you to easily customize, extend, or reuse **OTask** as a foundation for your own project, task, and incident management solutions.
