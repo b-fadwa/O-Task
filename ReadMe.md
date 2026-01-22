@@ -74,8 +74,10 @@ Example format:
 
 ## Test Accounts and Sample Data
 
-Sample data can be generated via a dedicated data generator function or from the UI.
-
+- Sample data can be generated via a dedicated data generator function or from the UI.
+- To test the login, you can use the following credentials:
+  - **Email:** ava.robinson@4d.com  
+  - **Password:** 123456
 
 ---
 

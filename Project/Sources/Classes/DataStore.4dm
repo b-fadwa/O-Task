@@ -1,6 +1,6 @@
 Class extends DataStoreImplementation
 
-// Generates an HTML email template with a given title and content
+// Authenticates a user and assigns role-based or guest privileges using session management
 exposed Function authentify($email : Text; $password : Text) : Boolean
 	var $adminPrivileges : Collection:=["Tag"; "Incident"; "List"; "Board"; "currentUser"; "Task"; "chooseUserBoard"]
 	var $pmPrivileges : Collection:=["privateBoardOrNot"; "Marketing"; "Tag"; "Incident"; "List"; "Board"; "currentUser"; "Task"]
