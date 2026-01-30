@@ -2,7 +2,6 @@
 
 This demo app is built with **4D Qodly Pro** and is designed to help teams manage projects, tasks, and incidents in a clear and structured way.
 
-
 ## Purpose of the application
 
 The **OTask Application** centralizes project and task management into a single, intuitive system.  
